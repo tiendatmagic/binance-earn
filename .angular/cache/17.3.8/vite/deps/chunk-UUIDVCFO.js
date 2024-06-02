@@ -8,7 +8,7 @@ import {
   isPlatformServer,
   parseCookieValue,
   setRootDomAdapter
-} from "./chunk-GYAMCZYA.js";
+} from "./chunk-AUX47FBK.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   APP_ID,
@@ -80,7 +80,7 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-NNXXDXNX.js";
+} from "./chunk-AY7JDWAY.js";
 import {
   __async,
   __objRest,
@@ -4021,6 +4021,7 @@ var makeStateKey2 = makeStateKey;
 var TransferState2 = TransferState;
 
 export {
+  HttpClient,
   BrowserDomAdapter,
   BrowserGetTestability,
   EVENT_MANAGER_PLUGINS,
@@ -4074,4 +4075,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-WFLIABH5.js.map
+//# sourceMappingURL=chunk-UUIDVCFO.js.map
