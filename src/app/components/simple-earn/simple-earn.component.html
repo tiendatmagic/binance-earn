@@ -1,15 +1,15 @@
 <div class="bg-[#fafafa]">
 
-  <div class="max-w-[1200px] py-6 mx-auto">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 xl:px-0">
 
     <div class="flex">
-      <p class="text-3xl font-medium">
+      <p class="hidden text-3xl font-medium md:block">
         Simple Earn
       </p>
     </div>
 
-    <div class="flex justify-between py-6">
-      <div>
+    <div class="justify-between block py-0 pt-0 xl:py-6 xl:flex md:pt-3 ">
+      <div class="hidden w-2/2 md:block">
         <p class="text-6xl font-semibold">
           Simple Earn
         </p>
@@ -26,9 +26,9 @@
         </div>
       </div>
 
-      <div class="bg-white border-[1px] border-[#eaecef] p-3 rounded-xl text-center">
+      <div class="bg-white border-[1px] border-[#eaecef] p-3 rounded-xl xl:text-center w-2/2 xl:mt-0 mt-0 md:mt-6">
         <p class="text-base font-medium text-center">Lịch sử trúng thưởng</p>
-        <div class="h-56 overflow-auto w-80" #listContainer>
+        <div class="w-full h-56 overflow-auto xl:w-80" #listContainer>
 
           <p clas="m-0" *ngFor="let item of listRewards">
             <span class="font-medium"> {{ item.address }}</span> vừa nhận được <span
@@ -43,11 +43,11 @@
 
 </div>
 
-<div class="max-w-[1200px] py-6 mx-auto">
+<div class="max-w-[1200px] py-6 px-4 sm:px-6 xl:px-0 mx-auto">
 
   <div id="default-carousel" class="relative w-full" data-carousel="slide">
     <!-- Carousel wrapper -->
-    <div class="relative h-48 overflow-hidden rounded-xl">
+    <div class="relative h-32 overflow-hidden sm:h-40 md:h-44 lg:h-48 rounded-xl">
       <!-- Item 1 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
         <img src="/assets/images/slider-1.png"
@@ -102,62 +102,75 @@
 
 </div>
 
-<div class="max-w-[1200px] py-6 mx-auto">
+<div class="max-w-[1200px] px-4 sm:px-6 xl:px-0 mx-auto">
 
-  <div class="flex gap-3 py-12">
+  <div class="gap-3 py-3 md:flex md:py-12">
 
-    <div class="w-[345px]">
-      <div class="relative w-full">
-        <input type="text"
-          class="pl-12 border-[1px] rounded-lg px-3 py-2.5 bg-[#ffffff] dark:bg-[#12161d] border-[#e9e9e9] dark:border-[#3a444f] outline-none focus:border-[#fcd535] focus:shadow-none focus:ring-0 w-full"
-          placeholder="Tìm kiếm coin">
-        <div class="absolute top-[50%] left-3 translate-y-[-50%] pointer-events-none">
-          <svg class="w-6 h-6 bn-svg hover-color text-[#b7bdc6]" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M11 6C13.7614 6 16 8.23858 16 11C16 13.7614 13.7614 16 11 16C8.23857 16 6 13.7614 6 11C6 8.23858 8.23858 6 11 6ZM11 3C15.4183 3 19 6.58172 19 11C19 12.3907 18.6451 13.6985 18.021 14.8379L21.0915 17.9086L19.5006 19.4995L17.9097 21.0904L14.8396 18.0201C13.6999 18.6448 12.3914 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3Z"
-              fill="currentColor"></path>
-          </svg>
+    <div class="flex gap-3">
+      <div class="md:w-[345px] flex-1">
+        <div class="relative w-full">
+          <input type="text"
+            class="pl-12 border-[1px] rounded-lg px-3 py-2.5 bg-[#ffffff] dark:bg-[#12161d] border-[#e9e9e9] dark:border-[#3a444f] outline-none focus:border-[#fcd535] focus:shadow-none focus:ring-0 w-full"
+            placeholder="Tìm kiếm coin">
+          <div class="absolute top-[50%] left-3 translate-y-[-50%] pointer-events-none">
+            <svg class="w-6 h-6 bn-svg hover-color text-[#b7bdc6]" xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M11 6C13.7614 6 16 8.23858 16 11C16 13.7614 13.7614 16 11 16C8.23857 16 6 13.7614 6 11C6 8.23858 8.23858 6 11 6ZM11 3C15.4183 3 19 6.58172 19 11C19 12.3907 18.6451 13.6985 18.021 14.8379L21.0915 17.9086L19.5006 19.4995L17.9097 21.0904L14.8396 18.0201C13.6999 18.6448 12.3914 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3Z"
+                fill="currentColor"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-auto md:w-auto">
+        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
+          class="focus:ring-1 focus:outline-none focus:ring-[#fcd535] ring-1 ring-[#e9e9e9] font-medium rounded-lg text-sm px-5 py-3 text-center inline-flex items-center dark:focus:ring-[#fcd535]"
+          type="button">
+          <div class="items-center hidden md:inline-flex">
+            Tất cả thời hạn
+            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m1 1 4 4 4-4" />
+            </svg>
+          </div>
+
+          <div class="inline-flex items-center md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#929aa5" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="#929aa5" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z" />
+            </svg>
+          </div>
+        </button>
+
+        <!-- Dropdown menu -->
+        <div id="dropdown"
+          class="z-30 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-44 dark:bg-gray-700">
+          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                Tất cả thời hạn
+              </a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                Linh hoạt
+              </a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                Cố định
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <div>
-      <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
-        class="focus:ring-1 focus:outline-none focus:ring-[#fcd535] ring-1 ring-[#e9e9e9] font-medium rounded-lg text-sm px-5 py-3 text-center inline-flex items-center dark:focus:ring-[#fcd535]"
-        type="button">
-        Tất cả thời hạn
-        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-          viewBox="0 0 10 6">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="m1 1 4 4 4-4" />
-        </svg>
-      </button>
-
-      <!-- Dropdown menu -->
-      <div id="dropdown"
-        class="z-30 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-44 dark:bg-gray-700">
-        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-              Tất cả thời hạn
-            </a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-              Linh hoạt
-            </a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-              Cố định
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div>
-      <div class="flex items-center h-full pl-3">
+    <div class="mt-3 md:mt-0">
+      <div class="flex items-center h-full md:pl-3">
         <input checked id="checked-checkbox" type="checkbox" value=""
           class="w-4 h-4 text-[#202630] bg-gray-100 border-gray-300 rounded focus:ring-[#202630] focus:ring-0">
         <label for="checked-checkbox" class="text-sm text-gray-900 ms-2">
@@ -171,33 +184,34 @@
   <div class="mb-3">
     <label for="" class="text-base font-medium">Nhập địa chỉ tham gia</label>
     <form [formGroup]="registerForm">
-      <div class="flex items-center gap-3 mt-2">
-        <div class="relative w-[345px]">
+      <div class="items-center block gap-3 mt-2 sm:flex">
+        <div class="relative w-full sm:w-[345px]">
           <input type="text" placeholder="Nhập địa chỉ tham gia"
             class="border-[1px] rounded-lg px-3 py-2.5 bg-[#ffffff] dark:bg-[#12161d] border-[#e9e9e9] outline-none focus:border-[#fcd535] focus:shadow-none focus:ring-0 w-full"
             name="address" [formControl]="address" required="">
         </div>
 
-        <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-7 py-3 mr-2"
+        <button
+          class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-7 py-3 mr-2 mt-3 sm:mt-0 w-full sm:w-auto"
           (click)="register();">
-          <div class="flex items-center gap-1"><span class="text-md"> Đăng ký </span></div>
+          <div class="flex items-center justify-center gap-1"><span class="text-md"> Đăng ký </span></div>
         </button>
       </div>
     </form>
   </div>
 
   <div>
-    <p class="text-3xl font-medium">
+    <p class="m-0 text-xl font-medium lg:text-3xl">
       Sản phẩm bảo đảm tiền gốc
     </p>
 
-    <p class="text-xl">
+    <p class="hidden m-0 text-lg md:block lg:text-xl">
       Kiếm phần thưởng với các sản phẩm bảo đảm tiền gốc.
     </p>
 
     <div>
       <div class="flex mt-6 mb-4">
-        <div class="w-[240px] h-5 flex items-center">
+        <div class="xl:w-[240px] w-[300px] h-5 flex items-center">
           <p class="m-0 text-sm font-normal">Đồng Coin</p>
         </div>
         <div class="w-[320px] h-5 flex items-center">
@@ -207,7 +221,7 @@
             <path d="M12.7083 11.25V12.6262L10 15.5438L7.29167 12.6262V11.25H12.7083Z" fill="#929AA5"></path>
           </svg>
         </div>
-        <div class="w-[483px] h-5 flex items-center">
+        <div class="w-[483px] h-5 items-center hidden xl:flex">
           <p class="m-0 text-sm font-normal">Thời hạn (ngày)</p>
         </div>
         <div class="w-[144px] h-5 flex items-center">
@@ -216,7 +230,7 @@
       </div>
 
       <div class="flex">
-        <div class="w-[240px] h-16 flex items-center">
+        <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
           <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/usdt.png">
           <span class="ml-3 text-base font-medium">
             USDT
@@ -227,7 +241,7 @@
             7.25%
           </p>
         </div>
-        <div class="w-[488px] h-16 flex items-center">
+        <div class="w-[488px] h-16 hidden xl:flex items-center">
           <ul class="flex gap-x-3">
             <li class="relative">
               <input class="sr-only peer" type="radio" value="flexible" name="usdt" id="option-1">
@@ -276,7 +290,7 @@
           <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
             (click)="openRegister()">
             <div class="flex items-center gap-1">
-              <span class="text-md">
+              <span class="text-md whitespace-nowrap">
                 Đăng ký
               </span>
             </div>
@@ -285,7 +299,7 @@
       </div>
 
       <div class="flex">
-        <div class="w-[240px] h-16 flex items-center">
+        <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
           <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/fdusd.png">
           <span class="ml-3 text-base font-medium">
             FDUSD
@@ -296,7 +310,7 @@
             0.98%
           </p>
         </div>
-        <div class="w-[488px] h-16 flex items-center">
+        <div class="w-[488px] h-16 hidden xl:flex items-center">
           <ul class="flex gap-x-3">
             <li class="relative">
               <input class="sr-only peer" type="radio" value="flexible" name="fdusd" id="option-3">
@@ -324,7 +338,7 @@
           <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
             (click)="openRegister()">
             <div class="flex items-center gap-1">
-              <span class="text-md">
+              <span class="text-md whitespace-nowrap">
                 Đăng ký
               </span>
             </div>
@@ -333,7 +347,7 @@
       </div>
 
       <div class="flex">
-        <div class="w-[240px] h-16 flex items-center">
+        <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
           <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/bnb.png">
           <span class="ml-3 text-base font-medium">
             BNB
@@ -344,7 +358,7 @@
             0.75%
           </p>
         </div>
-        <div class="w-[488px] h-16 flex items-center">
+        <div class="w-[488px] h-16 hidden xl:flex items-center">
           <ul class="flex gap-x-3">
             <li class="relative">
               <input class="sr-only peer" type="radio" value="flexible" name="bnb" id="option-4">
@@ -477,7 +491,7 @@
           <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
             (click)="openRegister()">
             <div class="flex items-center gap-1">
-              <span class="text-md">
+              <span class="text-md whitespace-nowrap">
                 Đăng ký
               </span>
             </div>
@@ -486,7 +500,7 @@
       </div>
 
       <div class="flex">
-        <div class="w-[240px] h-16 flex items-center">
+        <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
           <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/sol.png">
           <span class="ml-3 text-base font-medium">
             SOL
@@ -497,7 +511,7 @@
             6.8%
           </p>
         </div>
-        <div class="w-[488px] h-16 flex items-center">
+        <div class="w-[488px] h-16 hidden xl:flex items-center">
           <ul class="flex gap-x-3">
             <li class="relative">
               <input class="sr-only peer" type="radio" value="flexible" name="sol" id="option-10">
@@ -630,7 +644,7 @@
           <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
             (click)="openRegister()">
             <div class="flex items-center gap-1">
-              <span class="text-md">
+              <span class="text-md whitespace-nowrap">
                 Đăng ký
               </span>
             </div>
@@ -639,7 +653,7 @@
       </div>
 
       <div class="flex">
-        <div class="w-[240px] h-16 flex items-center">
+        <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
           <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/stg.png">
           <span class="ml-3 text-base font-medium">
             STG
@@ -650,7 +664,7 @@
             18.95%
           </p>
         </div>
-        <div class="w-[488px] h-16 flex items-center">
+        <div class="w-[488px] h-16 hidden xl:flex items-center">
           <ul class="flex gap-x-3">
             <li class="relative">
               <input class="sr-only peer" type="radio" value="flexible" name="stg" id="option-16">
@@ -678,7 +692,7 @@
           <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
             (click)="openRegister()">
             <div class="flex items-center gap-1">
-              <span class="text-md">
+              <span class="text-md whitespace-nowrap">
                 Đăng ký
               </span>
             </div>
@@ -687,7 +701,7 @@
       </div>
 
       <div class="flex">
-        <div class="w-[240px] h-16 flex items-center">
+        <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
           <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/usdt.png">
           <span class="ml-3 text-base font-medium">
             USDC
@@ -700,7 +714,7 @@
             </p>
           </ul>
         </div>
-        <div class="w-[488px] h-16 flex items-center">
+        <div class="w-[488px] h-16 hidden xl:flex items-center">
           <ul class="flex gap-x-3">
             <li class="relative">
               <input class="sr-only peer" type="radio" value="flexible" name="aeur" id="option-18">
@@ -728,7 +742,7 @@
           <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
             (click)="openRegister()">
             <div class="flex items-center gap-1">
-              <span class="text-md">
+              <span class="text-md whitespace-nowrap">
                 Đăng ký
               </span>
             </div>
@@ -737,7 +751,7 @@
       </div>
 
       <div class="flex">
-        <div class="w-[240px] h-16 flex items-center">
+        <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
           <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/aeur.png">
           <span class="ml-3 text-base font-medium">
             AEUR
@@ -748,7 +762,7 @@
             5.88%
           </p>
         </div>
-        <div class="w-[488px] h-16 flex items-center">
+        <div class="w-[488px] h-16 hidden xl:flex items-center">
           <ul class="flex gap-x-3">
             <li class="relative">
               <input class="sr-only peer" type="radio" value="flexible" name="aeur" id="option-19">
@@ -776,7 +790,7 @@
           <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
             (click)="openRegister()">
             <div class="flex items-center gap-1">
-              <span class="text-md">
+              <span class="text-md whitespace-nowrap">
                 Đăng ký
               </span>
             </div>
@@ -785,7 +799,7 @@
       </div>
 
       <div class="flex">
-        <div class="w-[240px] h-16 flex items-center">
+        <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
           <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/ava.png">
           <span class="ml-3 text-base font-medium">
             AVA
@@ -796,7 +810,7 @@
             0.62%
           </p>
         </div>
-        <div class="w-[488px] h-16 flex items-center">
+        <div class="w-[488px] h-16 hidden xl:flex items-center">
           <ul class="flex gap-x-3">
             <li class="relative">
               <input class="sr-only peer" type="radio" value="flexible" name="ava" id="option-20">
@@ -824,7 +838,7 @@
           <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
             (click)="openRegister()">
             <div class="flex items-center gap-1">
-              <span class="text-md">
+              <span class="text-md whitespace-nowrap">
                 Đăng ký
               </span>
             </div>
@@ -833,7 +847,7 @@
       </div>
 
       <div class="flex">
-        <div class="w-[240px] h-16 flex items-center">
+        <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
           <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/bb.png">
           <span class="ml-3 text-base font-medium">
             BB
@@ -844,7 +858,7 @@
             0.44%
           </p>
         </div>
-        <div class="w-[488px] h-16 flex items-center">
+        <div class="w-[488px] h-16 hidden xl:flex items-center">
           <ul class="flex gap-x-3">
             <li class="relative">
               <input class="sr-only peer" type="radio" value="flexible" name="bb" id="option-21">
@@ -872,7 +886,7 @@
           <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
             (click)="openRegister()">
             <div class="flex items-center gap-1">
-              <span class="text-md">
+              <span class="text-md whitespace-nowrap">
                 Đăng ký
               </span>
             </div>
@@ -881,7 +895,7 @@
       </div>
 
       <div class="flex">
-        <div class="w-[240px] h-16 flex items-center">
+        <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
           <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/fun.png">
           <span class="ml-3 text-base font-medium">
             FUN
@@ -892,7 +906,7 @@
             4.9%
           </p>
         </div>
-        <div class="w-[488px] h-16 flex items-center">
+        <div class="w-[488px] h-16 hidden xl:flex items-center">
           <ul class="flex gap-x-3">
             <li class="relative">
               <input class="sr-only peer" type="radio" value="flexible" name="fun" id="option-22">
@@ -962,7 +976,7 @@
           <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
             (click)="openRegister()">
             <div class="flex items-center gap-1">
-              <span class="text-md">
+              <span class="text-md whitespace-nowrap">
                 Đăng ký
               </span>
             </div>
