@@ -43,9 +43,6 @@ export class SimpleEarnComponent {
     });
   }
 
-  // Tạo pool các ký tự cho địa chỉ ví
-
-
   // Hàm tạo chuỗi ngẫu nhiên
   generateRandomString(length: any) {
     let result = '';
