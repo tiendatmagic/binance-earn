@@ -2,6 +2,10 @@
     .m-0 {
         margin: 0 !important;
     }
+
+    .mdc-tab {
+        padding: 0 !important;
+    }
     @media screen and (min-width: 576px) {
         ::ng-deep {
             ::-webkit-scrollbar {

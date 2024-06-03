@@ -4,6 +4,7 @@
 /storage/*.key
 /vendor
 /dist
+/.angular
 .env
 .env.backup
 .phpunit.result.cache
