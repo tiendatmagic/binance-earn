@@ -47,23 +47,31 @@
 
 <div class="max-w-[1200px] py-6 px-4 sm:px-6 xl:px-0 mx-auto">
 
-  <div id="default-carousel" class="relative w-full" data-carousel="slide">
+  <div id="default-carousel" class="relative w-full" data-carousel="">
     <!-- Carousel wrapper -->
-    <div class="relative h-32 overflow-hidden sm:h-40 md:h-44 lg:h-48 rounded-xl">
+    <div class="relative overflow-hidden h-36 sm:h-40 md:h-44 lg:h-48 rounded-xl">
       <!-- Item 1 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
         <img src="/assets/images/slider-1.png"
-          class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+          class="absolute hidden w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:block" alt="...">
+
+        <img src="/assets/images/slider-1-mobile.png"
+          class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:hidden" alt="...">
       </div>
       <!-- Item 2 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
         <img src="/assets/images/slider-2.png"
-          class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+          class="absolute hidden w-full h-full -translate-x-1/2 -translate-y-1/2 md:block top-1/2 left-1/2" alt="...">
+        <img src="/assets/images/slider-2-mobile.png"
+          class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:hidden" alt="...">
       </div>
       <!-- Item 3 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
         <img src="/assets/images/slider-1.png"
-          class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+          class="absolute hidden w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:block" alt="...">
+
+        <img src="/assets/images/slider-1-mobile.png"
+          class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 md:hidden" alt="...">
       </div>
     </div>
     <!-- Slider indicators -->
@@ -995,17 +1003,18 @@
   <div>
     <p class="m-0 text-xl font-medium lg:text-3xl">Các câu hỏi thường gặp
     </p>
+
     <div id="accordion-open" data-accordion="open" class="mt-3">
 
       <div class="mb-1" *ngFor="let item of getAccordion; let i = index;" [ngClass]="i >= limit ? 'hidden' : ''">
 
         <div class="mb-0 text-xl leading-7 font-medium text-[#1e2329] sm:hover:bg-[#f5f5f5] rounded-xl overflow-hidden">
           <button type="button"
-            class="flex items-center justify-between w-full gap-3 p-5 font-medium text-gray-500 rtl:text-right dark:text-gray-400 group"
+            class="flex items-center justify-between w-full gap-3 p-3 font-medium text-gray-500 rtl:text-right dark:text-gray-400 group"
             attr.data-accordion-target="#accordion-open-body-{{ i + 1 }}" aria-expanded="false">
             <span class="flex items-start justify-start gap-4">
               <div
-                class="border-[1px] border-[#eaecef] text-base font-medium w-8 h-8 px-1 py-0.5 text-center rounded-lg flex justify-center items-center bg-white text-[#1e2329]">
+                class="border-[1px] border-[#eaecef] text-base font-medium min-w-8 w-8 h-8 px-1 py-0.5 text-center rounded-lg flex justify-center items-center bg-white text-[#1e2329]">
                 {{ i + 1 }}
               </div>
               <p class="m-0 text-xl font-medium leading-7 text-[#1e2329] text-left">
