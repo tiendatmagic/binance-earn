@@ -997,7 +997,8 @@
     </p>
     <div id="accordion-open" data-accordion="open" class="mt-3">
 
-      <div class="mb-1" *ngFor="let item of getAccordion; let i = index;">
+      <div class="mb-1" *ngFor="let item of getAccordion; let i = index;" [ngClass]="i >= limit ? 'hidden' : ''">
+
         <div class="mb-0 text-xl leading-7 font-medium text-[#1e2329] sm:hover:bg-[#f5f5f5] rounded-xl overflow-hidden">
           <button type="button"
             class="flex items-center justify-between w-full gap-3 p-5 font-medium text-gray-500 rtl:text-right dark:text-gray-400 group"
@@ -1037,14 +1038,15 @@
             </div>
           </div>
         </div>
+
       </div>
 
-      <div class="py-2 mx-auto mt-4 text-center" *ngIf="getAccordion.length <= 5">
+      <div class="py-2 mx-auto mt-4 text-center" *ngIf="limit <=5">
         <a href="###" class="text-[#c99400] text-center font-medium text-base hover:text-[#f0b90b]"
           (click)="onMoreAccordion(10)">Xem thêm</a>
       </div>
 
-      <div class="py-2 mx-auto mt-4 text-center" *ngIf="getAccordion.length > 5">
+      <div class="py-2 mx-auto mt-4 text-center" *ngIf="!(limit <=5)">
         <a href="###" class="text-[#c99400] text-center font-medium text-base hover:text-[#f0b90b]"
           (click)="onMoreAccordion(5)">Ẩn bớt</a>
       </div>

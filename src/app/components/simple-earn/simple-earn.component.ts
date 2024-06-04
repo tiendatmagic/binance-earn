@@ -156,15 +156,15 @@ export class SimpleEarnComponent {
 
     ]
 
-    this.getAccordion.length = 0;
-    for (let i = 0; i < this.limit; i++) {
+    this.limit = 5;
+    for (let i = 0; i < this.accordion.length; i++) {
       this.getAccordion.push(this.accordion[i]);
     }
 
   }
 
   onMoreAccordion(size: number) {
-
+    this.limit = size;
   }
 
 
