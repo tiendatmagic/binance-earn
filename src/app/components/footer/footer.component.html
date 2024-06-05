@@ -454,7 +454,8 @@
 					<div class="mb-0 text-xl leading-7 font-medium text-[#1e2329] rounded-xl overflow-hidden">
 						<button type="button"
 							class="flex items-center justify-between w-full gap-3 py-2 font-medium text-gray-500 bg-transparent rtl:text-right dark:text-gray-400"
-							attr.data-accordion-target="#accordion-open-footer-{{ i + 1 }}" aria-expanded="false">
+							aria-expanded="false" (click)="chooseAccordion = i+1; openAccordion = !openAccordion"
+							ngClass="{{ openAccordion && chooseAccordion == i+1 ? 'bg-[#f5f5f5]' : '' }}">
 							<span class="flex items-start justify-start gap-4">
 								<p class="m-0 leading-7 text-[#1e2329] text-left text-base font-medium">
 									{{ item.title }}
@@ -477,7 +478,7 @@
 							</div>
 						</button>
 					</div>
-					<div id="accordion-open-footer-{{ i + 1 }}" class="hidden">
+					<div id="accordion-open-footer-{{ i + 1 }}" *ngIf="chooseAccordion == i+1 && openAccordion == true">
 						<div class="px-5 py-3 text-base text-[#707a8a] rounded-[0_0_12px_12px] relative bottom-1.5">
 							<div>
 								<ul class="text-[#1E2329] leading-10 text-sm">

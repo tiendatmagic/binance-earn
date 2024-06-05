@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   isDark: boolean = false;
-
+  chooseAccordion: any = 0;
+  openAccordion: boolean = false;
   footerMenuItems = [
     {
       title: 'Về chúng tôi',
