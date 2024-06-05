@@ -13,6 +13,7 @@ import { ReactiveFormsModule, FormsModule, Validators } from '@angular/forms';
 import { SimpleEarnRegisterModalComponent } from './components/simple-earn-register-modal/simple-earn-register-modal.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
+import { CoinListComponent } from './components/simple-earn/coin-list/coin-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MainComponent,
     FooterComponent,
     SimpleEarnComponent,
-    SimpleEarnRegisterModalComponent
+    SimpleEarnRegisterModalComponent,
+    CoinListComponent
   ],
   imports: [
     BrowserModule,

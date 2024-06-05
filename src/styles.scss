@@ -29,4 +29,8 @@ body {
         width: 20%;
         border-width: 2px;
     }
+
+    .mat-mdc-tab-body-content {
+        max-height: 500px;
+    }
 }

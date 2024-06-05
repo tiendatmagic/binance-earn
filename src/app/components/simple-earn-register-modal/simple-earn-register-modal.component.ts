@@ -7,7 +7,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrl: './simple-earn-register-modal.component.scss'
 })
 export class SimpleEarnRegisterModalComponent {
-
+  showTab: number = 1;
   selectEarnRegister: string = 'flexible';
   constructor(public dialogRef: MatDialogRef<SimpleEarnRegisterModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
   onNoClick() {
@@ -16,5 +16,9 @@ export class SimpleEarnRegisterModalComponent {
 
   changeSelectEarnRegister(value: string) {
     this.selectEarnRegister = value;
+  }
+
+  onShowTab(value: number) {
+    this.showTab = value;
   }
 }

@@ -1,0 +1,777 @@
+<div>
+  <div class="flex mt-6 mb-4">
+    <div class="xl:w-[240px] w-[300px] h-5 flex items-center">
+      <p class="m-0 text-sm font-normal">Đồng Coin</p>
+    </div>
+    <div class="w-[320px] h-5 flex items-center">
+      <p class="m-0 text-sm font-normal">APR</p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" class="w-4 h-4 ml-1">
+        <path d="M7.29167 8.75023V7.37401L10 4.45642L12.7083 7.37401V8.75023H7.29167Z" fill="#929AA5"></path>
+        <path d="M12.7083 11.25V12.6262L10 15.5438L7.29167 12.6262V11.25H12.7083Z" fill="#929AA5"></path>
+      </svg>
+    </div>
+    <div class="w-[483px] h-5 items-center hidden xl:flex">
+      <p class="m-0 text-sm font-normal">Thời hạn (ngày)</p>
+    </div>
+    <div class="w-[144px] h-5 flex items-center">
+
+    </div>
+  </div>
+
+
+
+  <div class="flex">
+    <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
+      <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/usdt.png">
+      <span class="ml-3 text-base font-medium">
+        USDT
+      </span>
+    </div>
+    <div class="w-[320px] h-16 flex items-center">
+      <p class="m-0 font-medium text-base text-[#03a66d]">
+        7.25%
+      </p>
+    </div>
+    <div class="w-[488px] h-16 hidden xl:flex items-center">
+      <ul class="flex gap-x-3">
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="flexible" name="usdt" id="option-1">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-1">
+            Linh hoạt
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="14d" name="usdt" id="option-2">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-2">
+            14
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="w-[144px] h-16 flex items-center">
+      <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
+        (click)="openRegister()">
+        <div class="flex items-center gap-1">
+          <span class="text-md whitespace-nowrap">
+            Đăng ký
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex">
+    <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
+      <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/fdusd.png">
+      <span class="ml-3 text-base font-medium">
+        FDUSD
+      </span>
+    </div>
+    <div class="w-[320px] h-16 flex items-center">
+      <p class="m-0 font-medium text-base text-[#03a66d]">
+        0.98%
+      </p>
+    </div>
+    <div class="w-[488px] h-16 hidden xl:flex items-center">
+      <ul class="flex gap-x-3">
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="flexible" name="fdusd" id="option-3">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-3">
+            Linh hoạt
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="w-[144px] h-16 flex items-center">
+      <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
+        (click)="openRegister()">
+        <div class="flex items-center gap-1">
+          <span class="text-md whitespace-nowrap">
+            Đăng ký
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex">
+    <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
+      <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/bnb.png">
+      <span class="ml-3 text-base font-medium">
+        BNB
+      </span>
+    </div>
+    <div class="w-[320px] h-16 flex items-center">
+      <p class="m-0 font-medium text-base text-[#03a66d]">
+        0.75%
+      </p>
+    </div>
+    <div class="w-[488px] h-16 hidden xl:flex items-center">
+      <ul class="flex gap-x-3">
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="flexible" name="bnb" id="option-4">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-4">
+            Linh hoạt
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="15d" name="bnb" id="option-5">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-5">
+            15d
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="30d" name="bnb" id="option-6">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-6">
+            30d
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="60d" name="bnb" id="option-7">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-7">
+            60d
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="90d" name="bnb" id="option-8">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-8">
+            90d
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="120d" name="bnb" id="option-9">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-9">
+            120d
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="w-[144px] h-16 flex items-center">
+      <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
+        (click)="openRegister()">
+        <div class="flex items-center gap-1">
+          <span class="text-md whitespace-nowrap">
+            Đăng ký
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex">
+    <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
+      <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/sol.png">
+      <span class="ml-3 text-base font-medium">
+        SOL
+      </span>
+    </div>
+    <div class="w-[320px] h-16 flex items-center">
+      <p class="m-0 font-medium text-base text-[#03a66d]">
+        6.8%
+      </p>
+    </div>
+    <div class="w-[488px] h-16 hidden xl:flex items-center">
+      <ul class="flex gap-x-3">
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="flexible" name="sol" id="option-10">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-10">
+            Linh hoạt
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="14d" name="sol" id="option-11">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-11">
+            14d
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="30d" name="sol" id="option-12">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-12">
+            30d
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="60d" name="sol" id="option-13">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-13">
+            60d
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="90d" name="sol" id="option-14">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-14">
+            90d
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="120d" name="sol" id="option-15">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-15">
+            120d
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="w-[144px] h-16 flex items-center">
+      <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
+        (click)="openRegister()">
+        <div class="flex items-center gap-1">
+          <span class="text-md whitespace-nowrap">
+            Đăng ký
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex">
+    <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
+      <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/stg.png">
+      <span class="ml-3 text-base font-medium">
+        STG
+      </span>
+    </div>
+    <div class="w-[320px] h-16 flex items-center">
+      <p class="m-0 font-medium text-base text-[#03a66d]">
+        18.95%
+      </p>
+    </div>
+    <div class="w-[488px] h-16 hidden xl:flex items-center">
+      <ul class="flex gap-x-3">
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="flexible" name="stg" id="option-16">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-16">
+            Linh hoạt
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="w-[144px] h-16 flex items-center">
+      <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
+        (click)="openRegister()">
+        <div class="flex items-center gap-1">
+          <span class="text-md whitespace-nowrap">
+            Đăng ký
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex">
+    <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
+      <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/usdt.png">
+      <span class="ml-3 text-base font-medium">
+        USDC
+      </span>
+    </div>
+    <div class="w-[320px] h-16 flex items-center">
+      <ul class="flex gap-x-3">
+        <p class="m-0 font-medium text-base text-[#03a66d]">
+          4.58% + 4%
+        </p>
+      </ul>
+    </div>
+    <div class="w-[488px] h-16 hidden xl:flex items-center">
+      <ul class="flex gap-x-3">
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="flexible" name="aeur" id="option-18">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-18">
+            Linh hoạt
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="w-[144px] h-16 flex items-center">
+      <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
+        (click)="openRegister()">
+        <div class="flex items-center gap-1">
+          <span class="text-md whitespace-nowrap">
+            Đăng ký
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex">
+    <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
+      <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/aeur.png">
+      <span class="ml-3 text-base font-medium">
+        AEUR
+      </span>
+    </div>
+    <div class="w-[320px] h-16 flex items-center">
+      <p class="m-0 font-medium text-base text-[#03a66d]">
+        5.88%
+      </p>
+    </div>
+    <div class="w-[488px] h-16 hidden xl:flex items-center">
+      <ul class="flex gap-x-3">
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="flexible" name="aeur" id="option-19">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-19">
+            Linh hoạt
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="w-[144px] h-16 flex items-center">
+      <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
+        (click)="openRegister()">
+        <div class="flex items-center gap-1">
+          <span class="text-md whitespace-nowrap">
+            Đăng ký
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex">
+    <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
+      <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/ava.png">
+      <span class="ml-3 text-base font-medium">
+        AVA
+      </span>
+    </div>
+    <div class="w-[320px] h-16 flex items-center">
+      <p class="m-0 font-medium text-base text-[#03a66d]">
+        0.62%
+      </p>
+    </div>
+    <div class="w-[488px] h-16 hidden xl:flex items-center">
+      <ul class="flex gap-x-3">
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="flexible" name="ava" id="option-20">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-20">
+            Linh hoạt
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="w-[144px] h-16 flex items-center">
+      <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
+        (click)="openRegister()">
+        <div class="flex items-center gap-1">
+          <span class="text-md whitespace-nowrap">
+            Đăng ký
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex">
+    <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
+      <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/bb.png">
+      <span class="ml-3 text-base font-medium">
+        BB
+      </span>
+    </div>
+    <div class="w-[320px] h-16 flex items-center">
+      <p class="m-0 font-medium text-base text-[#03a66d]">
+        0.44%
+      </p>
+    </div>
+    <div class="w-[488px] h-16 hidden xl:flex items-center">
+      <ul class="flex gap-x-3">
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="flexible" name="bb" id="option-21">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-21">
+            Linh hoạt
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="w-[144px] h-16 flex items-center">
+      <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
+        (click)="openRegister()">
+        <div class="flex items-center gap-1">
+          <span class="text-md whitespace-nowrap">
+            Đăng ký
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex">
+    <div class="xl:w-[240px] w-[300px] h-16 flex items-center">
+      <img class="w-4 h-4 rounded-full shadow-xl" src="/assets/images/fun.png">
+      <span class="ml-3 text-base font-medium">
+        FUN
+      </span>
+    </div>
+    <div class="w-[320px] h-16 flex items-center">
+      <p class="m-0 font-medium text-base text-[#03a66d]">
+        4.9%
+      </p>
+    </div>
+    <div class="w-[488px] h-16 hidden xl:flex items-center">
+      <ul class="flex gap-x-3">
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="flexible" name="fun" id="option-22">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-22">
+            Linh hoạt
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="15d" name="fun" id="option-23">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-23">
+            15d
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+
+        <li class="relative">
+          <input class="sr-only peer" type="radio" value="30d" name="fun" id="option-24">
+          <label
+            class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+            for="option-24">
+            30d
+          </label>
+
+          <div class="absolute top-0 right-0 hidden w-4 h-4 peer-checked:block check">
+            <div class="relative w-full h-full bg-black rounded-full">
+
+              <svg size="10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-4 text-white bn-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M7.035 16.812l-.001.002 2.121 2.121.002-.002 2.121-2.12 9.19-9.192-2.12-2.121-9.191 9.19-3.536-3.534-2.121 2.12 3.535 3.536z"
+                  fill="currentColor"></path>
+              </svg>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="w-[144px] h-16 flex items-center">
+      <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2 mr-2"
+        (click)="openRegister()">
+        <div class="flex items-center gap-1">
+          <span class="text-md whitespace-nowrap">
+            Đăng ký
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

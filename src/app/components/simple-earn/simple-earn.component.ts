@@ -17,6 +17,7 @@ export class SimpleEarnComponent {
   limit: any = 10;
   accordion: any = [];
   getAccordion: any = [];
+
   @ViewChild('listContainer', { static: false }) listContainer!: ElementRef;
   constructor(_fb: FormBuilder, public dialog: MatDialog) {
     this.address = new FormControl('', [
