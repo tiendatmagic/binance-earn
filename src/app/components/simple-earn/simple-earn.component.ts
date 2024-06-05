@@ -17,6 +17,8 @@ export class SimpleEarnComponent {
   limit: any = 10;
   accordion: any = [];
   getAccordion: any = [];
+  chooseAccordion: any = 0;
+  openAccordion: boolean = false;
 
   @ViewChild('listContainer', { static: false }) listContainer!: ElementRef;
   constructor(_fb: FormBuilder, public dialog: MatDialog) {
@@ -35,6 +37,7 @@ export class SimpleEarnComponent {
       alert("Địa chỉ ví không hợp lệ");
     }
   }
+
 
   openRegister() {
     this.dialog.closeAll();

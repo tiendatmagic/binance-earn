@@ -237,7 +237,8 @@
         <div class="mb-0 text-xl leading-7 font-medium text-[#1e2329] sm:hover:bg-[#f5f5f5] rounded-xl overflow-hidden">
           <button type="button"
             class="flex items-center justify-between w-full gap-3 p-3 font-medium text-gray-500 rtl:text-right dark:text-gray-400 group"
-            attr.data-accordion-target="#accordion-open-body-{{ i + 1 }}" aria-expanded="false">
+            aria-expanded="false" (click)="chooseAccordion = i+1; openAccordion = !openAccordion"
+            ngClass="{{ openAccordion && chooseAccordion == i+1 ? 'bg-[#f5f5f5]' : '' }}">
             <span class="flex items-start justify-start gap-4">
               <div
                 class="border-[1px] border-[#eaecef] text-base font-medium min-w-8 w-8 h-8 px-1 py-0.5 text-center rounded-lg flex justify-center items-center bg-white text-[#1e2329]">
@@ -264,7 +265,7 @@
             </div>
           </button>
         </div>
-        <div id="accordion-open-body-{{ i + 1 }}" class="hidden">
+        <div id="accordion-open-body-{{ i + 1 }}" *ngIf="chooseAccordion == i+1 && openAccordion == true">
           <div class="p-5 text-base text-[#707a8a] sm:bg-[#f5f5f5] rounded-[0_0_12px_12px] relative bottom-1.5">
             <div *ngFor="let item of item.content">
               <p>
