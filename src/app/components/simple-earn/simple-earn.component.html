@@ -238,7 +238,7 @@
           <button type="button"
             class="flex items-center justify-between w-full gap-3 p-3 font-medium text-gray-500 rtl:text-right dark:text-gray-400 group"
             aria-expanded="false" (click)="chooseAccordion = i+1; openAccordion = !openAccordion"
-            ngClass="{{ openAccordion && chooseAccordion == i+1 ? 'bg-[#f5f5f5]' : '' }}">
+            ngClass="{{ openAccordion && chooseAccordion == i+1 ? 'md:bg-[#f5f5f5]' : '' }}">
             <span class="flex items-start justify-start gap-4">
               <div
                 class="border-[1px] border-[#eaecef] text-base font-medium min-w-8 w-8 h-8 px-1 py-0.5 text-center rounded-lg flex justify-center items-center bg-white text-[#1e2329]">
@@ -251,15 +251,18 @@
 
             <div class="p-2.5 group-hover:bg-[#fcd535] rounded-full text-black">
 
-              <svg data-accordion-icon class="w-3 h-3 text-black rotate-180 shrink-0" aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <svg data-accordion-icon class="w-3 h-3 text-black shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"
+                *ngIf="(chooseAccordion == i+1 && openAccordion)">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M9 5 5 1 1 5" />
               </svg>
 
-              <svg data-accordion-icon class="hidden w-3 h-3 text-black rotate-180 shrink-0"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                <path d="M3 10.5v3h18v-3H3z" fill="currentColor"></path>
+              <svg data-accordion-icon class="w-3 h-3 text-black rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"
+                *ngIf="!(chooseAccordion == i+1 && openAccordion)">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
               </svg>
 
             </div>
