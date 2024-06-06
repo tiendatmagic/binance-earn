@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CoinListComponent } from './components/simple-earn/coin-list/coin-list.component';
 import { RegisteredAddressComponent } from './components/simple-earn/registered-address/registered-address.component';
+import { HttpClient, HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { RegisteredAddressComponent } from './components/simple-earn/registered-
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     MatButtonModule,
     ReactiveFormsModule,
     FormsModule,

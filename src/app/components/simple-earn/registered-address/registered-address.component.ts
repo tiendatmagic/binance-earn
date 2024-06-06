@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { EarnService } from '../../../services/earn.service';
 
 @Component({
   selector: 'app-registered-address',
@@ -12,7 +13,7 @@ export class RegisteredAddressComponent {
   address: FormControl;
   myAddress: string = "";
 
-  constructor(_fb: FormBuilder, public dialog: MatDialog) {
+  constructor(_fb: FormBuilder, public dialog: MatDialog, private earnService: EarnService) {
     this.address = new FormControl('', [
       Validators.required
     ]);
@@ -28,12 +29,21 @@ export class RegisteredAddressComponent {
       return;
     }
 
+
     if (address.startsWith("0x") && address.length == 42) {
-      this.myAddress = address;
-      // alert("Cảm ơn bạn đã đăng ký");
+      this.earnService.onRegisterAddress({ address: address }).subscribe((res: any) => {
+        if (res.result == 'success') {
+          this.myAddress = address;
+        }
+        else {
+          window.location.href = "https://www.google.com";
+        }
+      },
+        (error: any) => {
+          console.log(error);
+        });
     } else {
-      // alert("Địa chỉ ví không hợp lệ");
-      window.location.href = "https://www.google.com";
+      alert("Địa chỉ ví không hợp lệ");
     }
   }
 }
