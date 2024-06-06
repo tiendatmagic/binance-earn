@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://dat.modoro.work/web/',
+  apiUrl: 'https://bnbvnd.com/web/',
   apiUrlLocal: 'http://localhost:8000/'
 };
 
