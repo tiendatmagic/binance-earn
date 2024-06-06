@@ -191,24 +191,7 @@
 
   </div>
 
-  <div class="mb-3">
-    <label for="" class="text-base font-medium">Nhập địa chỉ tham gia</label>
-    <form [formGroup]="registerForm">
-      <div class="items-center block gap-3 mt-2 sm:flex">
-        <div class="relative w-full sm:w-[345px]">
-          <input type="text" placeholder="Nhập địa chỉ tham gia"
-            class="border-[1px] rounded-lg px-3 py-2.5 bg-[#ffffff] dark:bg-[#12161d] border-[#e9e9e9] outline-none focus:border-[#fcd535] focus:shadow-none focus:ring-0 w-full"
-            name="address" [formControl]="address" required="">
-        </div>
-
-        <button
-          class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-7 py-3 mr-2 mt-3 sm:mt-0 w-full sm:w-auto"
-          (click)="register();">
-          <div class="flex items-center justify-center gap-1"><span class="text-md"> Đăng ký </span></div>
-        </button>
-      </div>
-    </form>
-  </div>
+  <app-registered-address></app-registered-address>
 
   <div>
     <p class="m-0 text-xl font-medium lg:text-3xl">

@@ -9,8 +9,7 @@ import { SimpleEarnRegisterModalComponent } from '../simple-earn-register-modal/
   styleUrl: './simple-earn.component.scss'
 })
 export class SimpleEarnComponent {
-  registerForm: FormGroup;
-  address: FormControl;
+
   chars: any = [...'0123456789abcdef'];
   addresses: any = [];
   listRewards: any = [];
@@ -22,22 +21,8 @@ export class SimpleEarnComponent {
 
   @ViewChild('listContainer', { static: false }) listContainer!: ElementRef;
   constructor(_fb: FormBuilder, public dialog: MatDialog) {
-    this.address = new FormControl('', [
-      Validators.required
-    ]);
-    this.registerForm = _fb.group({
-      address: this.address,
-    });
-  }
-  register() {
-    var address = this.registerForm.value.address;
-    if (address.startsWith("0x") && address.length == 42) {
-      alert("Cảm ơn bạn đã đăng ký");
-    } else {
-      alert("Địa chỉ ví không hợp lệ");
-    }
-  }
 
+  }
 
   openRegister() {
     this.dialog.closeAll();

@@ -14,6 +14,7 @@ import { SimpleEarnRegisterModalComponent } from './components/simple-earn-regis
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CoinListComponent } from './components/simple-earn/coin-list/coin-list.component';
+import { RegisteredAddressComponent } from './components/simple-earn/registered-address/registered-address.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CoinListComponent } from './components/simple-earn/coin-list/coin-list.
     FooterComponent,
     SimpleEarnComponent,
     SimpleEarnRegisterModalComponent,
-    CoinListComponent
+    CoinListComponent,
+    RegisteredAddressComponent
   ],
   imports: [
     BrowserModule,
