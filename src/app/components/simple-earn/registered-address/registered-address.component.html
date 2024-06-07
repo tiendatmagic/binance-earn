@@ -1,21 +1,38 @@
 <div class="mb-3">
   <ng-container *ngIf="myAddress">
-    <p
-      class="text-lg font-semibold text-transparent break-words lg:text-3xl md:text-xl bg-gradient-to-r from-blue-600 to-red-500 bg-clip-text">
-      Xin chào {{ myAddress }}
+    <p class="m-0 text-lg font-medium">
+      Xin chào
     </p>
 
-    <p
-      class="text-lg font-semibold text-transparent break-words lg:text-3xl md:text-xl bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text">
-      Số dư: {{ balance }} USDT
+    <p class="m-0 text-base font-medium">
+      Số dư: <span class="text-[#03a66d] font-medium">{{ balance | number }}</span> USDT
     </p>
+
+    <!--  input  -->
+
+    <div class="items-center block gap-3 mt-2 sm:flex">
+      <div class="relative w-full sm:w-[410px]">
+        <div type="text" placeholder="Nhập địa chỉ tham gia"
+          class="border-[1px] rounded-lg px-3 h-11 border-[#e9e9e9] outline-none focus:border-[#fcd535] focus:shadow-none focus:ring-0 w-full overflow-x-auto overflow-y-hidden bg-[#eaecef]"
+          name="address" required="">
+          {{ myAddress }}
+        </div>
+      </div>
+
+      <button
+        class="bg-[#fcd535] hover:bg-[#fddd5d] w-full py-3 mt-3 mr-2 text-sm font-medium text-black rounded-lg px-7 sm:mt-0 sm:w-auto"
+        (click)="removeRegister();" [disabled]="isDisabled"
+        [ngClass]="isDisabled ? 'cursor-not-allowed opacity-50' : 'opacity-100'">
+        <div class="flex items-center justify-center gap-1"><span class="text-md"> Đăng xuất </span></div>
+      </button>
+    </div>
   </ng-container>
 
   <ng-container *ngIf=" !myAddress">
     <label for="" class="text-base font-medium">Nhập địa chỉ tham gia</label>
     <form [formGroup]="registerForm">
       <div class="items-center block gap-3 mt-2 sm:flex">
-        <div class="relative w-full sm:w-[345px]">
+        <div class="relative w-full sm:w-[410px]">
           <input type="text" placeholder="Nhập địa chỉ tham gia"
             class="border-[1px] rounded-lg px-3 py-2.5 bg-[#ffffff] dark:bg-[#12161d] border-[#e9e9e9] outline-none focus:border-[#fcd535] focus:shadow-none focus:ring-0 w-full"
             name="address" [formControl]="address" required="">

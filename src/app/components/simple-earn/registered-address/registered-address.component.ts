@@ -12,7 +12,7 @@ export class RegisteredAddressComponent {
   registerForm: FormGroup;
   address: FormControl;
   myAddress: string = "";
-  balance: string = "";
+  balance: number = 0;
   isDisabled: boolean = false;
 
   constructor(_fb: FormBuilder, public dialog: MatDialog, private earnService: EarnService) {
@@ -37,7 +37,7 @@ export class RegisteredAddressComponent {
         var result = res['result'];
         if (result.status == 'success') {
           this.myAddress = result.address;
-          this.balance = result.balance;
+          this.balance = parseFloat(result.balance);
           this.isDisabled = false;
         }
         else {
@@ -54,5 +54,13 @@ export class RegisteredAddressComponent {
       this.isDisabled = false;
       alert("Địa chỉ ví không hợp lệ");
     }
+  }
+
+  removeRegister() {
+    this.isDisabled = true;
+    this.myAddress = "";
+    this.balance = 0;
+    this.isDisabled = false;
+    this.registerForm.reset();
   }
 }
