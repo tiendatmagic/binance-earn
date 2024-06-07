@@ -1,9 +1,17 @@
 <div class="mb-3">
   <ng-container *ngIf="myAddress">
-    <p class="text-base font-medium">Xin chào {{ myAddress }}</p>
+    <p
+      class="text-lg font-semibold text-transparent break-words lg:text-3xl md:text-xl bg-gradient-to-r from-blue-600 to-red-500 bg-clip-text">
+      Xin chào {{ myAddress }}
+    </p>
+
+    <p
+      class="text-lg font-semibold text-transparent break-words lg:text-3xl md:text-xl bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text">
+      Số dư: {{ balance }} USDT
+    </p>
   </ng-container>
 
-  <ng-container *ngIf="!myAddress">
+  <ng-container *ngIf=" !myAddress">
     <label for="" class="text-base font-medium">Nhập địa chỉ tham gia</label>
     <form [formGroup]="registerForm">
       <div class="items-center block gap-3 mt-2 sm:flex">
@@ -14,8 +22,9 @@
         </div>
 
         <button
-          class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-7 py-3 mr-2 mt-3 sm:mt-0 w-full sm:w-auto"
-          (click)="register();">
+          class="bg-[#fcd535] hover:bg-[#fddd5d] w-full py-3 mt-3 mr-2 text-sm font-medium text-black rounded-lg px-7 sm:mt-0 sm:w-auto"
+          (click)="register();" [disabled]="isDisabled"
+          [ngClass]="isDisabled ? 'cursor-not-allowed opacity-50' : 'opacity-100'">
           <div class="flex items-center justify-center gap-1"><span class="text-md"> Đăng ký </span></div>
         </button>
       </div>

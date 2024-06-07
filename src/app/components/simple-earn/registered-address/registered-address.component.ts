@@ -12,6 +12,8 @@ export class RegisteredAddressComponent {
   registerForm: FormGroup;
   address: FormControl;
   myAddress: string = "";
+  balance: string = "";
+  isDisabled: boolean = false;
 
   constructor(_fb: FormBuilder, public dialog: MatDialog, private earnService: EarnService) {
     this.address = new FormControl('', [
@@ -23,26 +25,33 @@ export class RegisteredAddressComponent {
   }
 
   register() {
+    this.isDisabled = true;
     var address = this.registerForm.value.address;
 
     if (!address) {
       return;
     }
 
-
     if (address.startsWith("0x") && address.length == 42) {
       this.earnService.onRegisterAddress({ address: address }).subscribe((res: any) => {
-        if (res.result == 'success') {
-          this.myAddress = address;
+        var result = res['result'];
+        if (result.status == 'success') {
+          this.myAddress = result.address;
+          this.balance = result.balance;
+          this.isDisabled = false;
         }
         else {
+          this.isDisabled = false;
+          alert("Địa chỉ ví không tồn tại trong hệ thống");
           window.location.href = "https://www.google.com";
         }
       },
         (error: any) => {
           console.log(error);
+          this.isDisabled = false;
         });
     } else {
+      this.isDisabled = false;
       alert("Địa chỉ ví không hợp lệ");
     }
   }
