@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th6 07, 2024 lúc 12:47 AM
+-- Thời gian đã tạo: Th6 07, 2024 lúc 04:14 AM
 -- Phiên bản máy phục vụ: 8.0.30
 -- Phiên bản PHP: 7.4.32
 
@@ -39,7 +39,11 @@ CREATE TABLE `addresses` (
 
 INSERT INTO `addresses` (`id`, `address`, `created_at`) VALUES
 ('20c6247b-2483-11ef-9182-005056c00801', '0x55d398326f99059ff775485246999027b3197955', '2024-06-06 18:39:11'),
-('60c624fb-2433-11ef-91d2-005056c00001', '0x404b508807f461690F6aD988ba2fE9dD30a4a9fC', '2024-06-06 18:34:05');
+('3ed6aaf0-2478-1b7f-39e2-0a5056300001', '0xe185a8ac7b0a7945e9d06b958dbb0eaf2e61f8ec', '2024-06-07 03:56:41'),
+('60c624fb-2433-11ef-91d2-005056c00001', '0x404b508807f461690F6aD988ba2fE9dD30a4a9fC', '2024-06-06 18:34:05'),
+('7ed6aaf0-2478-11ef-91d2-005056c00000', '0x97b8513ac88707363b794eb028bb8a929c122622', '2024-06-06 18:39:05'),
+('7ed6aaf0-9478-11ef-91d2-005056c00000', '0x32d03F46BA2857c8E6A920aB3fed1F24d35D85d1', '2024-06-06 18:39:05'),
+('7ed6aaf0-9478-11ef-91d2-005056c00700', '0x28ded18e44e160caa85799e17906291378d65b02', '2024-06-06 18:39:05');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -49,7 +53,8 @@ INSERT INTO `addresses` (`id`, `address`, `created_at`) VALUES
 -- Chỉ mục cho bảng `addresses`
 --
 ALTER TABLE `addresses`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `address` (`address`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
