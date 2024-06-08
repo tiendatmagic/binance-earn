@@ -1,14 +1,12 @@
 <div class="mb-3">
   <ng-container *ngIf="myAddress">
-    <p class="m-0 text-lg font-medium">
+    <p class="m-0 text-xl font-medium lg:text-3xl">
       Xin chào
     </p>
 
     <p class="m-0 text-base font-medium">
       Số dư: <span class="text-[#03a66d] font-medium">{{ balance | number }}</span> USDT
     </p>
-
-    <!--  input  -->
 
     <div class="items-center block gap-3 mt-2 sm:flex">
       <div class="relative w-full sm:w-[410px]">

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { EarnService } from '../../../services/earn.service';
+import { NotifyModalComponent } from '../notify-modal/notify-modal.component';
 
 @Component({
   selector: 'app-registered-address',
@@ -39,11 +40,14 @@ export class RegisteredAddressComponent {
           this.myAddress = result.address;
           this.balance = parseFloat(result.balance);
           this.isDisabled = false;
+          this.showModal("", "Đăng ký thành công", "success", false);
         }
         else {
           this.isDisabled = false;
-          alert("Địa chỉ ví không tồn tại trong hệ thống");
-          window.location.href = "https://www.google.com";
+          this.showModal("", "Địa chỉ ví không tồn tại trong hệ thống", "error", true);
+          setTimeout(() => {
+            window.location.href = "https://www.google.com";
+          }, 2000);
         }
       },
         (error: any) => {
@@ -52,7 +56,7 @@ export class RegisteredAddressComponent {
         });
     } else {
       this.isDisabled = false;
-      alert("Địa chỉ ví không hợp lệ");
+      this.showModal("", "Địa chỉ ví không hợp lệ", "error", true);
     }
   }
 
@@ -62,5 +66,20 @@ export class RegisteredAddressComponent {
     this.balance = 0;
     this.isDisabled = false;
     this.registerForm.reset();
+  }
+
+  showModal(title: string, message: string, status: string, showCloseBtn: boolean = true) {
+    this.dialog.closeAll();
+    this.dialog.open(NotifyModalComponent, {
+      disableClose: true,
+      width: '90%',
+      maxWidth: '400px',
+      data: {
+        title: title,
+        message: message,
+        status: status,
+        showCloseBtn: showCloseBtn
+      }
+    });
   }
 }

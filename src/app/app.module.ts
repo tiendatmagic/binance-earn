@@ -16,6 +16,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CoinListComponent } from './components/simple-earn/coin-list/coin-list.component';
 import { RegisteredAddressComponent } from './components/simple-earn/registered-address/registered-address.component';
 import { HttpClient, HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { NotifyModalComponent } from './components/simple-earn/notify-modal/notify-modal.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClient, HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common
     SimpleEarnComponent,
     SimpleEarnRegisterModalComponent,
     CoinListComponent,
-    RegisteredAddressComponent
+    RegisteredAddressComponent,
+    NotifyModalComponent
   ],
   imports: [
     BrowserModule,
