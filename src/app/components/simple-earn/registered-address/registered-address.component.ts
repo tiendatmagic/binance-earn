@@ -15,6 +15,7 @@ export class RegisteredAddressComponent {
   myAddress: string = "";
   balance: number = 0;
   isDisabled: boolean = false;
+  isInterval: any;
 
   constructor(_fb: FormBuilder, public dialog: MatDialog, private earnService: EarnService) {
     this.address = new FormControl('', [
@@ -26,13 +27,13 @@ export class RegisteredAddressComponent {
   }
 
   register() {
-    this.isDisabled = true;
     var address = this.registerForm.value.address;
 
     if (!address) {
       return;
     }
 
+    this.isDisabled = true;
     if (address.startsWith("0x") && address.length == 42) {
       this.earnService.onRegisterAddress({ address: address }).subscribe((res: any) => {
         var result = res['result'];
@@ -41,6 +42,9 @@ export class RegisteredAddressComponent {
           this.balance = parseFloat(result.balance);
           this.isDisabled = false;
           this.showModal("", "Đăng ký thành công", "success", false);
+          if (this.myAddress) {
+            this.autoCheckBalance();
+          }
         }
         else {
           this.isDisabled = false;
@@ -61,11 +65,38 @@ export class RegisteredAddressComponent {
   }
 
   removeRegister() {
-    this.isDisabled = true;
     this.myAddress = "";
     this.balance = 0;
+    this.isDisabled = true;
+    this.autoCheckBalance();
     this.isDisabled = false;
     this.registerForm.reset();
+  }
+
+  autoCheckBalance() {
+    if (this.myAddress) {
+      this.isInterval = setInterval(() => {
+        this.earnService.onRegisterAddress({ address: this.myAddress }).subscribe((res: any) => {
+          var result = res['result'];
+          if (result.status == 'success') {
+            this.myAddress = result.address;
+            this.balance = parseFloat(result.balance);
+            this.isDisabled = false;
+          }
+        },
+          (error: any) => {
+            console.log(error);
+          });
+      }, 5000);
+    }
+    else {
+      clearInterval(this.isInterval);
+    }
+  }
+
+  ngOnDestroy() {
+    // Hủy bỏ interval khi component bị hủy
+    clearInterval(this.isInterval);
   }
 
   showModal(title: string, message: string, status: string, showCloseBtn: boolean = true) {
