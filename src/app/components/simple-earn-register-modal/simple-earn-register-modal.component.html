@@ -16,66 +16,92 @@
       <mat-tab label="Đăng ký">
         <div class="m-2">
           <ul class="flex gap-x-3">
-            <li class="relative" (click)="changeSelectEarnRegister('flexible')">
-              <input class="sr-only peer" type="radio" value="flexible" name="register-earn" id="option-a">
+            <li class="relative" (click)="changeSelectEarnRegister('mission-1')">
+              <input class="sr-only peer" type="radio" value="mission-1" name="register-earn" id="option-a">
               <label
                 class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
                 for="option-a">
                 <div>
                   <p class="m-0 text-sm">
-                    Linh hoạt
+                    Nhiệm vụ 1
                   </p>
-                  <p class="text-[#03a66d] text-base font-medium m-0">7.27%</p>
+                  <p class="text-[#03a66d] text-base font-medium m-0">
+                    1 USDT
+                  </p>
                 </div>
               </label>
-
-
             </li>
 
-            <li class="relative" (click)="changeSelectEarnRegister('14d')">
-              <input class="sr-only peer" type="radio" value="14d" name="register-earn" id="option-b">
+            <li class="relative" (click)="changeSelectEarnRegister('mission-2')">
+              <input class="sr-only peer" type="radio" value="mission-2" name="register-earn" id="option-b">
               <label
                 class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
                 for="option-b">
                 <div>
                   <p class="m-0 text-sm">
-                    14 ngày
+                    Nhiệm vụ 2
                   </p>
-                  <p class="text-[#03a66d] text-base font-medium m-0">8.23%</p>
+                  <p class="text-[#03a66d] text-base font-medium m-0">
+                    10 USDT
+                  </p>
+                </div>
+              </label>
+            </li>
+
+            <li class="relative" (click)="changeSelectEarnRegister('mission-3')">
+              <input class="sr-only peer" type="radio" value="mission-3" name="register-earn" id="option-c">
+              <label
+                class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent"
+                for="option-c">
+                <div>
+                  <p class="m-0 text-sm">
+                    Nhiệm vụ 3
+                  </p>
+                  <p class="text-[#03a66d] text-base font-medium m-0">
+                    20 USDT
+                  </p>
                 </div>
               </label>
             </li>
           </ul>
 
-          <ng-container>
+          <div class="mt-3">
+            <label for="" class="text-base font-medium">Số dư của bạn: 0 USDT</label>
+          </div>
+
+          <ng-container *ngIf="selectEarnRegister == 'mission-1'">
             <div class="mt-3">
-              <label for="" class="text-base font-medium">Số tiền</label>
+              <p class="text-sm font-medium">Nhiệm vụ 1</p>
+              <div class="flex items-end justify-between mt-3">
+                <div>
+                  <span class="text-base font-medium">1. Theo dõi Binance trên Facebook</span>
+                </div>
 
-              <div class="flex items-center gap-3 mt-2">
-                <div class="relative w-full">
-                  <input type="text" placeholder="Tối thiểu 0.1 USDT"
-                    class="border-[1px] rounded-lg px-3 py-2.5 bg-[#ffffff] dark:bg-[#12161d] border-[#e9e9e9] outline-none focus:border-[#fcd535] focus:shadow-none focus:ring-0 w-full"
-                    name="address" required="">
+                <div class="text-[#03a66d] bg-[#e6fff1] px-2 py-1 rounded-lg">
+                  <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                      stroke="currentColor" class="h-4 stroke-[3px]">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
 
-                  <div class="absolute top-[50%] right-3 flex gap-3 translate-y-[-50%]">
-                    <span class="font-medium cursor-pointer">
-                      USDT
-                    </span>
-
-                    <span class="font-medium text-[#c99400] cursor-pointer">
-                      TỐI ĐA
-                    </span>
+                    <span class="text-sm font-medium"> Đã hoàn thành</span>
                   </div>
                 </div>
               </div>
 
-              <div class="flex items-center gap-1 mt-2">
-                <span class="text-[#707a8a] text-sm">
-                  Khả dụng: 0 USDT từ
-                </span>
-
-                <span class="text-sm font-medium">Ví Spot & Ví Funding</span>
+              <div class="flex items-end justify-between mt-5">
+                <div>
+                  <span class="text-base font-medium">2. Nạp USDT vào ví Trust Wallet</span>
+                </div>
+                <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2">
+                  <div class="flex items-center gap-1">
+                    <span class="text-md whitespace-nowrap">
+                      Kiểm tra
+                    </span>
+                  </div>
+                </button>
               </div>
+
             </div>
 
             <div class="mt-3 bg-[#fdf8e6] p-2">
@@ -98,16 +124,159 @@
               <div class="mt-3">
                 <div class="flex gap-2">
                   <div class="flex gap-1">
-                    <p class="text-[13px] border-b-[1px] border-[#b7bdc6] border-dashed text-[#474d57]">Phần thưởng theo
-                      thời
-                      gian thực hàng
-                      ngày
+                    <p class="text-[13px] border-b-[1px] border-[#b7bdc6] border-dashed text-[#474d57]">Phần thưởng khi
+                      hoàn thành xong nhiệm vụ này:
                     </p>
-                    <p class="text-[13px] text-[#707a8a]">APR 7.32%</p>
                   </div>
 
                   <div>
-                    <p class="text-[#03a66d]">0.00020016 USDT</p>
+                    <p class="text-[#03a66d]">1 USDT</p>
+                  </div>
+                </div>
+                <p class="text-xs text-[#b7bdc6] leading-4">*
+                  APR theo thời gian thực có thể thay đổi mỗi phút và phần thưởng được cộng dồn và tích lũy trực tiếp
+                  trong Ví Earn của bạn mỗi phút. APR không phải là lợi nhuận thực tế hoặc lợi nhuận dự đoán tính bằng
+                  tiền pháp định.</p>
+
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-container *ngIf="selectEarnRegister == 'mission-2'">
+            <div class="mt-3">
+              <p class="text-sm font-medium">Nhiệm vụ 2</p>
+              <div class="flex items-end justify-between mt-3">
+                <div>
+                  <span class="text-base font-medium">1. Theo dõi Binance trên Facebook</span>
+                </div>
+
+                <div class="text-[#03a66d] bg-[#e6fff1] px-2 py-1 rounded-lg">
+                  <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                      stroke="currentColor" class="h-4 stroke-[3px]">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+
+                    <span class="text-sm font-medium"> Đã hoàn thành</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-end justify-between mt-5">
+                <div>
+                  <span class="text-base font-medium">2. Nạp USDT vào ví Trust Wallet</span>
+                </div>
+                <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2">
+                  <div class="flex items-center gap-1">
+                    <span class="text-md whitespace-nowrap">
+                      Kiểm tra
+                    </span>
+                  </div>
+                </button>
+              </div>
+
+            </div>
+
+            <div class="mt-3 bg-[#fdf8e6] p-2">
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="w-4 h-4"
+                  style="font-size: 20px; color: var(--color-PrimaryText);">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12 21a9 9 0 100-18 9 9 0 000 18zM10.75 8.5V6h2.5v2.5h-2.5zm0 9.5v-7h2.5v7h-2.5z"
+                    fill="currentColor"></path>
+                </svg>
+                <span>
+                  Bạn không có đủ tiền mã hoá?
+                </span>
+                <span class="text-[#c99400] font-medium">Chuyển đổi</span>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <p class="font-medium">Tổng kết</p>
+              <div class="mt-3">
+                <div class="flex gap-2">
+                  <div class="flex gap-1">
+                    <p class="text-[13px] border-b-[1px] border-[#b7bdc6] border-dashed text-[#474d57]">Phần thưởng khi
+                      hoàn thành xong nhiệm vụ này:
+                    </p>
+                  </div>
+
+                  <div>
+                    <p class="text-[#03a66d]">1 USDT</p>
+                  </div>
+                </div>
+                <p class="text-xs text-[#b7bdc6] leading-4">*
+                  APR theo thời gian thực có thể thay đổi mỗi phút và phần thưởng được cộng dồn và tích lũy trực tiếp
+                  trong Ví Earn của bạn mỗi phút. APR không phải là lợi nhuận thực tế hoặc lợi nhuận dự đoán tính bằng
+                  tiền pháp định.</p>
+
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-container *ngIf="selectEarnRegister == 'mission-3'">
+            <div class="mt-3">
+              <p class="text-sm font-medium">Nhiệm vụ 3</p>
+              <div class="flex items-end justify-between mt-3">
+                <div>
+                  <span class="text-base font-medium">1. Theo dõi Binance trên Facebook</span>
+                </div>
+
+                <div class="text-[#03a66d] bg-[#e6fff1] px-2 py-1 rounded-lg">
+                  <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                      stroke="currentColor" class="h-4 stroke-[3px]">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+
+                    <span class="text-sm font-medium"> Đã hoàn thành</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-end justify-between mt-5">
+                <div>
+                  <span class="text-base font-medium">2. Nạp USDT vào ví Trust Wallet</span>
+                </div>
+                <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2">
+                  <div class="flex items-center gap-1">
+                    <span class="text-md whitespace-nowrap">
+                      Kiểm tra
+                    </span>
+                  </div>
+                </button>
+              </div>
+
+            </div>
+
+            <div class="mt-3 bg-[#fdf8e6] p-2">
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="w-4 h-4"
+                  style="font-size: 20px; color: var(--color-PrimaryText);">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12 21a9 9 0 100-18 9 9 0 000 18zM10.75 8.5V6h2.5v2.5h-2.5zm0 9.5v-7h2.5v7h-2.5z"
+                    fill="currentColor"></path>
+                </svg>
+                <span>
+                  Bạn không có đủ tiền mã hoá?
+                </span>
+                <span class="text-[#c99400] font-medium">Chuyển đổi</span>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <p class="font-medium">Tổng kết</p>
+              <div class="mt-3">
+                <div class="flex gap-2">
+                  <div class="flex gap-1">
+                    <p class="text-[13px] border-b-[1px] border-[#b7bdc6] border-dashed text-[#474d57]">Phần thưởng khi
+                      hoàn thành xong nhiệm vụ này:
+                    </p>
+                  </div>
+
+                  <div>
+                    <p class="text-[#03a66d]">1 USDT</p>
                   </div>
                 </div>
                 <p class="text-xs text-[#b7bdc6] leading-4">*
