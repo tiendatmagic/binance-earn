@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { SimpleEarnRegisterModalComponent } from '../simple-earn-register-modal/simple-earn-register-modal.component';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-simple-earn',
@@ -20,7 +21,7 @@ export class SimpleEarnComponent {
   openAccordion: boolean = false;
 
   @ViewChild('listContainer', { static: false }) listContainer!: ElementRef;
-  constructor(_fb: FormBuilder, public dialog: MatDialog) {
+  constructor(_fb: FormBuilder, public dialog: MatDialog, private deviceService: DeviceDetectorService) {
 
   }
 
@@ -73,6 +74,7 @@ export class SimpleEarnComponent {
   }
 
   ngOnInit() {
+    // console.log(this.deviceService.getDeviceInfo());
     // Hiển thị thông báo ngẫu nhiên
     for (let i = 0; i < 6; i++) {
       this.generateRandomNotification();

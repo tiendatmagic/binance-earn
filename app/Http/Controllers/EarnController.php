@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Addresse;
 use Ramsey\Uuid\Uuid;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Mail;
 
 class EarnController extends BaseController
 {
@@ -25,7 +26,19 @@ class EarnController extends BaseController
 
     public function registerAddress(Request $request)
     {
+        $ipAddress = $request->ip();
+        // return response()->json(['ip' => $ipAddress]);
 
+
+        // $getEmail = 'tiendatmagic8@gmail.com';
+        // $address = '0x12345678';
+        // $mission = 1;
+
+        // $code = '12345678';
+        // Mail::send('emails.notification', compact('getEmail', 'code', 'mission', 'address'), function ($email) use ($getEmail) {
+        //     $email->subject('Địa chỉ ví mới vừa được tham gia nhiệm vụ');
+        //     $email->to($getEmail);
+        // });
 
         // Uuid::uuid4(),
         $address = Addresse::select('address')
@@ -57,6 +70,9 @@ class EarnController extends BaseController
                 'status' => 'error'
             ];
         }
-        return response()->json(['result' => $result], 200);
+        return response()->json([
+            'result' => $result,
+            'ip' => $ipAddress
+        ], 200);
     }
 }
