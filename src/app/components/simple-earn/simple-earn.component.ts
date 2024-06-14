@@ -25,13 +25,7 @@ export class SimpleEarnComponent {
 
   }
 
-  openRegister() {
-    this.dialog.closeAll();
-    this.dialog.open(SimpleEarnRegisterModalComponent, {
-      width: '90%',
-      maxWidth: '500px',
-    });
-  }
+
 
   // Hàm tạo chuỗi ngẫu nhiên
   generateRandomString(length: any) {

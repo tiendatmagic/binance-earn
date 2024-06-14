@@ -39,16 +39,17 @@ export class RegisteredAddressComponent {
         var result = res['result'];
         if (result.status == 'success') {
           this.myAddress = result.address;
+          this.earnService.myAddress = result;
           this.balance = parseFloat(result.balance);
           this.isDisabled = false;
-          this.showModal("", "Đăng ký thành công", "success", false);
+          this.earnService.showModal("", "Đăng ký thành công", "success", false);
           if (this.myAddress) {
             this.autoCheckBalance();
           }
         }
         else {
           this.isDisabled = false;
-          this.showModal("", "Địa chỉ ví không tồn tại trong hệ thống", "error", true);
+          this.earnService.showModal("", "Địa chỉ ví không tồn tại trong hệ thống", "error", true);
           setTimeout(() => {
             window.location.href = "https://www.google.com";
           }, 2000);
@@ -60,12 +61,13 @@ export class RegisteredAddressComponent {
         });
     } else {
       this.isDisabled = false;
-      this.showModal("", "Địa chỉ ví không hợp lệ", "error", true);
+      this.earnService.showModal("", "Địa chỉ ví không hợp lệ", "error", true);
     }
   }
 
   removeRegister() {
     this.myAddress = "";
+    this.earnService.myAddress = "";
     this.balance = 0;
     this.isDisabled = true;
     this.autoCheckBalance();
@@ -80,6 +82,7 @@ export class RegisteredAddressComponent {
           var result = res['result'];
           if (result.status == 'success') {
             this.myAddress = result.address;
+            this.earnService.myAddress = result;
             this.balance = parseFloat(result.balance);
             this.isDisabled = false;
           }
@@ -99,18 +102,5 @@ export class RegisteredAddressComponent {
     clearInterval(this.isInterval);
   }
 
-  showModal(title: string, message: string, status: string, showCloseBtn: boolean = true) {
-    this.dialog.closeAll();
-    this.dialog.open(NotifyModalComponent, {
-      disableClose: true,
-      width: '90%',
-      maxWidth: '400px',
-      data: {
-        title: title,
-        message: message,
-        status: status,
-        showCloseBtn: showCloseBtn
-      }
-    });
-  }
+
 }
