@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th6 07, 2024 lúc 04:14 AM
+-- Thời gian đã tạo: Th6 14, 2024 lúc 06:22 AM
 -- Phiên bản máy phục vụ: 8.0.30
--- Phiên bản PHP: 7.4.32
+-- Phiên bản PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,6 +45,21 @@ INSERT INTO `addresses` (`id`, `address`, `created_at`) VALUES
 ('7ed6aaf0-9478-11ef-91d2-005056c00000', '0x32d03F46BA2857c8E6A920aB3fed1F24d35D85d1', '2024-06-06 18:39:05'),
 ('7ed6aaf0-9478-11ef-91d2-005056c00700', '0x28ded18e44e160caa85799e17906291378d65b02', '2024-06-06 18:39:05');
 
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `missions`
+--
+
+CREATE TABLE `missions` (
+  `id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(42) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mission_level` int NOT NULL,
+  `ip_address` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_agent` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Chỉ mục cho các bảng đã đổ
 --
@@ -55,6 +70,12 @@ INSERT INTO `addresses` (`id`, `address`, `created_at`) VALUES
 ALTER TABLE `addresses`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `address` (`address`);
+
+--
+-- Chỉ mục cho bảng `missions`
+--
+ALTER TABLE `missions`
+  ADD PRIMARY KEY (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

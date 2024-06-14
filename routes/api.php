@@ -23,5 +23,7 @@ Route::group([
 ], function ($router) {
 
     Route::post('register-address', [EarnController::class, 'registerAddress']);
+    Route::post('post-mission', [EarnController::class, 'postMission']);
+    Route::post('get-max-mission', [EarnController::class, 'getMaxMission']);
     // Route::get('get-transactions', [TransactionController::class, 'getTransactions']);
 });
