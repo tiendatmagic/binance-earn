@@ -70,6 +70,24 @@ class EarnController extends BaseController
         if ($mission && $mission->mission_level >= $request->mission) {
             return response()->json(['result' => '']);
         }
+        $minimumBalance = 10;
+        switch ($request->mission) {
+            case 1:
+                $minimumBalance = 1;
+                break;
+            case 2:
+                $minimumBalance = 10;
+                break;
+
+            case 3:
+                $minimumBalance = 100;
+                break;
+            default:
+                break;
+        }
+        if ($request->balance < $minimumBalance) {
+            return response()->json(['result' => '']);
+        }
 
         $ipAddress = $request->ip();
         $result = [

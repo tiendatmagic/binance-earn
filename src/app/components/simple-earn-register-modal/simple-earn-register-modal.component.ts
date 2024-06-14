@@ -18,6 +18,7 @@ export class SimpleEarnRegisterModalComponent {
   canSelectEarnRegister = 1;
   isChangeSelect = false;
   isLoading = true;
+  minimumBalance = 0;
   missionData: any = [
     {
       id: 1,
@@ -103,17 +104,28 @@ export class SimpleEarnRegisterModalComponent {
 
     setTimeout(() => {
       this.missionData[nr - 1].getMission.nr1 = true;
-    }, 60000 * 2);
+    }, 1000 * 2);
 
   }
 
   checkBalance(nr: number) {
     var balance = this.earnService.myAddress.balance;
+    this.minimumBalance = 0;
+    if (nr == 1) {
+      this.minimumBalance = 1;
+    }
+    if (nr == 2) {
+      this.minimumBalance = 10;
+    }
+    if (nr == 3) {
+      this.minimumBalance = 100;
+    }
 
-
-    if (balance <= 0) {
+    if (balance < this.minimumBalance) {
       this.isInsufficientBalance = true;
       this.missionData[nr - 1].getMission.nr2 = false;
+      console.log(this.isInsufficientBalance);
+      console.log(this.missionData[nr - 1].getMission.nr2);
       setTimeout(() => {
         this.isInsufficientBalance = false;
       }, 5000);

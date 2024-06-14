@@ -123,8 +123,9 @@
                     </div>
                   </ng-container>
 
-                  <ng-container *ngIf="!missionData[selectEarnRegister - 1].getMission.nr2 && isInsufficientBalance">
-                    <div class="text-[#a60303] bg-[#ffe6e6] px-2 py-1 rounded-lg" *ngIf="myBalance <= 0">
+
+                  <ng-container *ngIf="isInsufficientBalance && (!missionData[selectEarnRegister - 1].getMission.nr2)">
+                    <div class="text-[#a60303] bg-[#ffe6e6] px-2 py-1 rounded-lg" *ngIf="myBalance <= minimumBalance">
                       <div class="flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                           stroke="currentColor" class="h-4 stroke-[3px]">
@@ -137,7 +138,8 @@
                   </ng-container>
 
                   <ng-container *ngIf="!missionData[selectEarnRegister - 1].getMission.nr2 && !isInsufficientBalance">
-                    <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2"
+                    <button
+                      class="text-black bg-[hsl(48,97%,60%)] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2"
                       (click)="checkBalance(selectEarnRegister)">
                       <div class="flex items-center gap-1">
                         <span class="text-md whitespace-nowrap">
@@ -226,8 +228,8 @@
                     </div>
                   </ng-container>
 
-                  <ng-container *ngIf="!missionData[selectEarnRegister - 1].getMission.nr2 && isInsufficientBalance">
-                    <div class="text-[#a60303] bg-[#ffe6e6] px-2 py-1 rounded-lg" *ngIf="myBalance <= 0">
+                  <ng-container *ngIf="isInsufficientBalance && (!missionData[selectEarnRegister - 1].getMission.nr2)">
+                    <div class="text-[#a60303] bg-[#ffe6e6] px-2 py-1 rounded-lg" *ngIf="myBalance <= minimumBalance">
                       <div class="flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                           stroke="currentColor" class="h-4 stroke-[3px]">
@@ -329,8 +331,8 @@
                     </div>
                   </ng-container>
 
-                  <ng-container *ngIf="!missionData[selectEarnRegister - 1].getMission.nr2 && isInsufficientBalance">
-                    <div class="text-[#a60303] bg-[#ffe6e6] px-2 py-1 rounded-lg" *ngIf="myBalance <= 0">
+                  <ng-container *ngIf="isInsufficientBalance && (!missionData[selectEarnRegister - 1].getMission.nr2)">
+                    <div class="text-[#a60303] bg-[#ffe6e6] px-2 py-1 rounded-lg" *ngIf="myBalance <= minimumBalance">
                       <div class="flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                           stroke="currentColor" class="h-4 stroke-[3px]">
