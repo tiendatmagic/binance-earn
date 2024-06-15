@@ -16,7 +16,7 @@
     <mat-tab-group animationDuration="0ms" mat-stretch-tabs="false" mat-align-tabs="start">
       <mat-tab label="Đăng ký">
         <div class="m-2">
-          <ul class="flex gap-x-3">
+          <ul class="flex flex-wrap gap-3">
             <li class="relative" (click)="changeSelectEarnRegister(1)">
               <input class="sr-only peer" type="radio" value="mission-1" name="register-earn" id="option-a">
               <label class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer"
@@ -64,6 +64,54 @@
                 </div>
               </label>
             </li>
+
+            <li class="relative" (click)="changeSelectEarnRegister(4)">
+              <input class="sr-only peer" type="radio" value="mission-4" name="register-earn" id="option-d">
+              <label class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50"
+                [ngClass]="selectEarnRegister ==4 ? 'focus:outline-none peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent':  ''"
+                for="option-d">
+                <div>
+                  <p class="m-0 text-sm">
+                    Nhiệm vụ 4
+                  </p>
+                  <p class="text-[#03a66d] text-base font-medium m-0">
+                    1 USDT
+                  </p>
+                </div>
+              </label>
+            </li>
+
+            <li class="relative" (click)="changeSelectEarnRegister(5)">
+              <input class="sr-only peer" type="radio" value="mission-5" name="register-earn" id="option-e">
+              <label class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50"
+                [ngClass]="selectEarnRegister ==5 ? 'focus:outline-none peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent':  ''"
+                for="option-e">
+                <div>
+                  <p class="m-0 text-sm">
+                    Nhiệm vụ 5
+                  </p>
+                  <p class="text-[#03a66d] text-base font-medium m-0">
+                    10 USDT
+                  </p>
+                </div>
+              </label>
+            </li>
+
+            <li class="relative" (click)="changeSelectEarnRegister(6)">
+              <input class="sr-only peer" type="radio" value="mission-6" name="register-earn" id="option-f">
+              <label class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50"
+                [ngClass]="selectEarnRegister ==6 ? 'focus:outline-none peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent':  ''"
+                for="option-f">
+                <div>
+                  <p class="m-0 text-sm">
+                    Nhiệm vụ 6
+                  </p>
+                  <p class="text-[#03a66d] text-base font-medium m-0">
+                    20 USDT
+                  </p>
+                </div>
+              </label>
+            </li>
           </ul>
 
           <div class="mt-3">
@@ -73,7 +121,7 @@
           </div>
 
           <ng-container *ngIf="!isLoading">
-            <ng-container *ngIf="selectEarnRegister == 1">
+            <ng-container>
               <div class="mt-3">
                 <p class="text-sm font-medium">Nhiệm vụ {{selectEarnRegister}}</p>
                 <div class="flex items-end justify-between mt-3">
@@ -108,7 +156,14 @@
 
                 <div class="flex items-end justify-between mt-5">
                   <div>
-                    <span class="text-base font-medium">2. Nạp USDT vào ví Trust Wallet</span>
+                    <span class="text-base font-medium">2. Nạp {{ selectEarnRegister == 1 ? '1' : ''}} {{
+                      selectEarnRegister == 2 ?
+                      '10'
+                      : ''}} {{ selectEarnRegister == 3
+                      ? '100' : ''}} {{ selectEarnRegister == 4 ? '1' : ''}} {{ selectEarnRegister == 5 ?
+                      '10'
+                      : ''}} {{ selectEarnRegister == 6
+                      ? '100' : ''}} USDT vào ví Trust Wallet</span>
                   </div>
                   <ng-container *ngIf="missionData[selectEarnRegister - 1].getMission.nr2">
                     <div class="text-[#03a66d] bg-[#e6fff1] px-2 py-1 rounded-lg" *ngIf="myBalance > 0">
@@ -166,109 +221,9 @@
                       <p class="text-[#03a66d]">{{ selectEarnRegister == 1 ? '1' : ''}} {{ selectEarnRegister == 2 ?
                         '10'
                         : ''}} {{ selectEarnRegister == 3
-                        ? '20' : ''}} USDT</p>
-                    </div>
-                  </div>
-                  <p class="text-xs text-[#b7bdc6] leading-4">*
-                    APR theo thời gian thực có thể thay đổi mỗi phút và phần thưởng được cộng dồn và tích lũy trực tiếp
-                    trong Ví Earn của bạn mỗi phút. APR không phải là lợi nhuận thực tế hoặc lợi nhuận dự đoán tính bằng
-                    tiền pháp định.</p>
-
-                </div>
-              </div>
-            </ng-container>
-
-            <ng-container *ngIf="selectEarnRegister == 2">
-              <div class="mt-3">
-                <p class="text-sm font-medium">Nhiệm vụ {{selectEarnRegister}}</p>
-                <div class="flex items-end justify-between mt-3">
-                  <div>
-                    <span class="text-base font-medium">1. Theo dõi Binance trên Facebook</span>
-                  </div>
-
-                  <ng-container *ngIf="missionData[selectEarnRegister - 1].getMission.nr1">
-                    <div class="text-[#03a66d] bg-[#e6fff1] px-2 py-1 rounded-lg">
-                      <div class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                          stroke="currentColor" class="h-4 stroke-[3px]">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                        </svg>
-
-                        <span class="text-sm font-medium"> Đã hoàn thành</span>
-                      </div>
-                    </div>
-                  </ng-container>
-
-                  <ng-container *ngIf="!missionData[selectEarnRegister - 1].getMission.nr1">
-                    <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2"
-                      (click)="openLink(selectEarnRegister)">
-                      <div class="flex items-center gap-1">
-                        <span class="text-md whitespace-nowrap">
-                          Kiểm tra
-                        </span>
-                      </div>
-                    </button>
-                  </ng-container>
-                </div>
-
-                <div class="flex items-end justify-between mt-5">
-                  <div>
-                    <span class="text-base font-medium">2. Nạp USDT vào ví Trust Wallet</span>
-                  </div>
-                  <ng-container *ngIf="missionData[selectEarnRegister - 1].getMission.nr2">
-                    <div class="text-[#03a66d] bg-[#e6fff1] px-2 py-1 rounded-lg" *ngIf="myBalance > 0">
-                      <div class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                          stroke="currentColor" class="h-4 stroke-[3px]">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                        </svg>
-
-                        <span class="text-sm font-medium"> Đã hoàn thành</span>
-                      </div>
-                    </div>
-                  </ng-container>
-
-                  <ng-container *ngIf="isInsufficientBalance && (!missionData[selectEarnRegister - 1].getMission.nr2)">
-                    <div class="text-[#a60303] bg-[#ffe6e6] px-2 py-1 rounded-lg" *ngIf="myBalance <= minimumBalance">
-                      <div class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                          stroke="currentColor" class="h-4 stroke-[3px]">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                        </svg>
-
-                        <span class="text-sm font-medium"> Số dư không đủ</span>
-                      </div>
-                    </div>
-                  </ng-container>
-
-                  <ng-container *ngIf="!missionData[selectEarnRegister - 1].getMission.nr2 && !isInsufficientBalance">
-                    <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2"
-                      (click)="checkBalance(selectEarnRegister)">
-                      <div class="flex items-center gap-1">
-                        <span class="text-md whitespace-nowrap">
-                          Kiểm tra
-                        </span>
-                      </div>
-                    </button>
-                  </ng-container>
-                </div>
-              </div>
-
-              <div class="mt-3">
-                <p class="font-medium">Tổng kết</p>
-                <div class="mt-3">
-                  <div class="flex gap-2">
-                    <div class="flex gap-1">
-                      <p class="text-[13px] border-b-[1px] border-[#b7bdc6] border-dashed text-[#474d57]">Phần thưởng
-                        khi
-                        hoàn thành xong nhiệm vụ này:
-                      </p>
-                    </div>
-
-                    <div>
-                      <p class="text-[#03a66d]">{{ selectEarnRegister == 1 ? '1' : ''}} {{ selectEarnRegister == 2 ?
+                        ? '20' : ''}} {{ selectEarnRegister == 4 ? '1' : ''}} {{ selectEarnRegister == 5 ?
                         '10'
-                        : ''}} {{ selectEarnRegister == 3
+                        : ''}} {{ selectEarnRegister == 6
                         ? '20' : ''}} USDT</p>
                     </div>
                   </div>
@@ -281,108 +236,6 @@
               </div>
             </ng-container>
 
-            <ng-container *ngIf="selectEarnRegister == 3">
-              <div class="mt-3">
-                <p class="text-sm font-medium">Nhiệm vụ {{selectEarnRegister}}</p>
-                <div class="flex items-end justify-between mt-3">
-                  <div>
-                    <span class="text-base font-medium">1. Theo dõi Binance trên Facebook</span>
-                  </div>
-
-                  <ng-container *ngIf="missionData[selectEarnRegister - 1].getMission.nr1">
-                    <div class="text-[#03a66d] bg-[#e6fff1] px-2 py-1 rounded-lg">
-                      <div class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                          stroke="currentColor" class="h-4 stroke-[3px]">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                        </svg>
-
-                        <span class="text-sm font-medium"> Đã hoàn thành</span>
-                      </div>
-                    </div>
-                  </ng-container>
-
-                  <ng-container *ngIf="!missionData[selectEarnRegister - 1].getMission.nr1">
-                    <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2"
-                      (click)="openLink(selectEarnRegister)">
-                      <div class="flex items-center gap-1">
-                        <span class="text-md whitespace-nowrap">
-                          Kiểm tra
-                        </span>
-                      </div>
-                    </button>
-                  </ng-container>
-                </div>
-
-                <div class="flex items-end justify-between mt-5">
-                  <div>
-                    <span class="text-base font-medium">2. Nạp USDT vào ví Trust Wallet</span>
-                  </div>
-                  <ng-container *ngIf="missionData[selectEarnRegister - 1].getMission.nr2">
-                    <div class="text-[#03a66d] bg-[#e6fff1] px-2 py-1 rounded-lg" *ngIf="myBalance > 0">
-                      <div class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                          stroke="currentColor" class="h-4 stroke-[3px]">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                        </svg>
-
-                        <span class="text-sm font-medium"> Đã hoàn thành</span>
-                      </div>
-                    </div>
-                  </ng-container>
-
-                  <ng-container *ngIf="isInsufficientBalance && (!missionData[selectEarnRegister - 1].getMission.nr2)">
-                    <div class="text-[#a60303] bg-[#ffe6e6] px-2 py-1 rounded-lg" *ngIf="myBalance <= minimumBalance">
-                      <div class="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                          stroke="currentColor" class="h-4 stroke-[3px]">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                        </svg>
-
-                        <span class="text-sm font-medium"> Số dư không đủ</span>
-                      </div>
-                    </div>
-                  </ng-container>
-
-                  <ng-container *ngIf="!missionData[selectEarnRegister - 1].getMission.nr2 && !isInsufficientBalance">
-                    <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-5 py-2"
-                      (click)="checkBalance(selectEarnRegister)">
-                      <div class="flex items-center gap-1">
-                        <span class="text-md whitespace-nowrap">
-                          Kiểm tra
-                        </span>
-                      </div>
-                    </button>
-                  </ng-container>
-                </div>
-              </div>
-
-              <div class="mt-3">
-                <p class="font-medium">Tổng kết</p>
-                <div class="mt-3">
-                  <div class="flex gap-2">
-                    <div class="flex gap-1">
-                      <p class="text-[13px] border-b-[1px] border-[#b7bdc6] border-dashed text-[#474d57]">Phần thưởng
-                        khi
-                        hoàn thành xong nhiệm vụ này:
-                      </p>
-                    </div>
-
-                    <div>
-                      <p class="text-[#03a66d]">{{ selectEarnRegister == 1 ? '1' : ''}} {{ selectEarnRegister == 2 ?
-                        '10'
-                        : ''}} {{ selectEarnRegister == 3
-                        ? '20' : ''}} USDT</p>
-                    </div>
-                  </div>
-                  <p class="text-xs text-[#b7bdc6] leading-4">*
-                    APR theo thời gian thực có thể thay đổi mỗi phút và phần thưởng được cộng dồn và tích lũy trực tiếp
-                    trong Ví Earn của bạn mỗi phút. APR không phải là lợi nhuận thực tế hoặc lợi nhuận dự đoán tính bằng
-                    tiền pháp định.</p>
-
-                </div>
-              </div>
-            </ng-container>
           </ng-container>
 
           <ng-container *ngIf="isLoading">
@@ -392,7 +245,8 @@
           </ng-container>
         </div>
 
-        <div *ngIf="isChangeSelect && isCompleted==false" class="text-red-500">
+        <div *ngIf="!(!isProcess && !isCompleted && !isChangeSelect) && !(!isProcess && isCompleted && !isChangeSelect)"
+          class="text-red-500">
           Bạn chưa hoàn thành nhiệm vụ {{ selectEarnRegister }}
         </div>
       </mat-tab>

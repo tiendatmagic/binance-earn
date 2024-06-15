@@ -15,7 +15,7 @@ export class SimpleEarnRegisterModalComponent {
   isInsufficientBalance = false;
   isProcess = false;
   isCompleted = false;
-  canSelectEarnRegister = 1;
+  canSelectEarnRegister = 0;
   isChangeSelect = false;
   isLoading = true;
   minimumBalance = 0;
@@ -27,7 +27,6 @@ export class SimpleEarnRegisterModalComponent {
         nr1: false,
         nr2: false
       }
-
     },
     {
       id: 2,
@@ -36,7 +35,6 @@ export class SimpleEarnRegisterModalComponent {
         nr1: false,
         nr2: false
       }
-
     },
     {
       id: 3,
@@ -45,7 +43,30 @@ export class SimpleEarnRegisterModalComponent {
         nr1: false,
         nr2: false
       }
-
+    },
+    {
+      id: 4,
+      getMission:
+      {
+        nr1: false,
+        nr2: false
+      }
+    },
+    {
+      id: 5,
+      getMission:
+      {
+        nr1: false,
+        nr2: false
+      }
+    },
+    {
+      id: 6,
+      getMission:
+      {
+        nr1: false,
+        nr2: false
+      }
     }
   ]
   constructor(public dialogRef: MatDialogRef<SimpleEarnRegisterModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private earnService: EarnService, private deviceService: DeviceDetectorService) { }
@@ -56,11 +77,15 @@ export class SimpleEarnRegisterModalComponent {
       var result = res['result'];
       if (result) {
         //
-        this.selectEarnRegister = result.mission + 1;
-        this.isLoading = false;
-        if (this.selectEarnRegister > 3) {
+        if (result.mission + 1 <= 6) {
+          this.selectEarnRegister = result.mission + 1;
+        }
+
+        if (this.selectEarnRegister > 6 || result.mission + 1 > 6) {
           this.earnService.showModal("", "Bạn đã hoàn thành hết nhiệm vụ rồi", "success", false);
         }
+        this.isLoading = false;
+        return;
       }
       else {
         this.selectEarnRegister = 1;
@@ -71,6 +96,7 @@ export class SimpleEarnRegisterModalComponent {
         console.log(error);
         this.isLoading = false;
       });
+
   }
 
   ngDoCheck() {
@@ -82,17 +108,15 @@ export class SimpleEarnRegisterModalComponent {
 
   changeSelectEarnRegister(nr: number) {
     this.isChangeSelect = true;
-    if (this.canSelectEarnRegister == this.selectEarnRegister + 1) {
+
+    if (this.canSelectEarnRegister == nr) {
       this.selectEarnRegister = nr;
       this.isChangeSelect = false;
       this.isProcess = false;
       this.isCompleted = false;
+      //
+    }
 
-      //
-    }
-    if (this.canSelectEarnRegister != this.selectEarnRegister + 1) {
-      //
-    }
   }
 
   onShowTab(value: number) {
@@ -100,7 +124,6 @@ export class SimpleEarnRegisterModalComponent {
   }
 
   openLink(nr: number) {
-    console.log(nr);
     var link;
     switch (nr) {
 
@@ -111,6 +134,16 @@ export class SimpleEarnRegisterModalComponent {
         link = 'https://www.facebook.com/binance/posts/pfbid02FgZGpYSWMbmR2dbpWTkvRZ63hC9ggtaN7UuHk1j6k3dVyNReBAsvgR16YNrySMWsl';
         break;
       case 3:
+        link = 'https://www.facebook.com/binance/posts/pfbid0E2zvLRwsTt8JM5XW86Sn9t19PNGFxfSdUa1ytBM1dp736X75Z9WPRgmnCxhjrUtdl';
+        break;
+      //
+      case 4:
+        link = 'https://www.facebook.com/binance';
+        break;
+      case 5:
+        link = 'https://www.facebook.com/binance/posts/pfbid02FgZGpYSWMbmR2dbpWTkvRZ63hC9ggtaN7UuHk1j6k3dVyNReBAsvgR16YNrySMWsl';
+        break;
+      case 6:
         link = 'https://www.facebook.com/binance/posts/pfbid0E2zvLRwsTt8JM5XW86Sn9t19PNGFxfSdUa1ytBM1dp736X75Z9WPRgmnCxhjrUtdl';
         break;
       default:
@@ -136,12 +169,20 @@ export class SimpleEarnRegisterModalComponent {
     if (nr == 3) {
       this.minimumBalance = 100;
     }
+    //
+    if (nr == 4) {
+      this.minimumBalance = 1;
+    }
+    if (nr == 5) {
+      this.minimumBalance = 10;
+    }
+    if (nr == 6) {
+      this.minimumBalance = 100;
+    }
 
     if (balance < this.minimumBalance) {
       this.isInsufficientBalance = true;
       this.missionData[nr - 1].getMission.nr2 = false;
-      console.log(this.isInsufficientBalance);
-      console.log(this.missionData[nr - 1].getMission.nr2);
       setTimeout(() => {
         this.isInsufficientBalance = false;
       }, 5000);
