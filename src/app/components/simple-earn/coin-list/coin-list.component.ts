@@ -19,7 +19,7 @@ export class CoinListComponent {
       this.dialog.open(SimpleEarnRegisterModalComponent, {
         disableClose: true,
         width: '90%',
-        maxWidth: '500px',
+        maxWidth: '722px',
       });
     }
     else {
