@@ -392,7 +392,7 @@
           </ng-container>
         </div>
 
-        <div *ngIf="isChangeSelect" class="text-red-500">
+        <div *ngIf="isChangeSelect && isCompleted==false" class="text-red-500">
           Bạn chưa hoàn thành nhiệm vụ {{ selectEarnRegister }}
         </div>
       </mat-tab>
@@ -562,7 +562,8 @@
 
     <div class="w-full text-right">
       <button class="text-black bg-[#fcd535] hover:bg-[#fddd5d] font-medium rounded-lg text-sm px-9 py-3 mr-2"
-        (click)="!isProcess && !isCompleted ? onProcess(selectEarnRegister) : onNoClick()" [disabled]="isProcess">
+        (click)="!isProcess && !isCompleted ? onProcess(selectEarnRegister) : onNoClick()" [disabled]="isProcess"
+        [ngClass]="isProcess ? 'cursor-not-allowed opacity-50' : ''">
         <div class="flex items-center gap-1">
           <span class="text-md" *ngIf="!isProcess && !isCompleted">
             Xác nhận

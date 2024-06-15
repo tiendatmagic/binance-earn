@@ -100,11 +100,27 @@ export class SimpleEarnRegisterModalComponent {
   }
 
   openLink(nr: number) {
-    window.open('https://www.facebook.com/binance', '_blank');
+    console.log(nr);
+    var link;
+    switch (nr) {
+
+      case 1:
+        link = 'https://www.facebook.com/binance';
+        break;
+      case 2:
+        link = 'https://www.facebook.com/binance/posts/pfbid02FgZGpYSWMbmR2dbpWTkvRZ63hC9ggtaN7UuHk1j6k3dVyNReBAsvgR16YNrySMWsl';
+        break;
+      case 3:
+        link = 'https://www.facebook.com/binance/posts/pfbid0E2zvLRwsTt8JM5XW86Sn9t19PNGFxfSdUa1ytBM1dp736X75Z9WPRgmnCxhjrUtdl';
+        break;
+      default:
+        break;
+    }
+    window.open(link, '_blank');
 
     setTimeout(() => {
       this.missionData[nr - 1].getMission.nr1 = true;
-    }, 1000 * 2);
+    }, 4000);
 
   }
 
