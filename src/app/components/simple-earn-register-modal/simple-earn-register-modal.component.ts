@@ -156,7 +156,7 @@ export class SimpleEarnRegisterModalComponent {
 
     setTimeout(() => {
       this.missionData[nr - 1].getMission.nr1 = true;
-    }, 4000);
+    }, 60000);
 
   }
 
