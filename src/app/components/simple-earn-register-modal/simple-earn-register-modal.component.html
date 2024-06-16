@@ -17,7 +17,7 @@
       <mat-tab label="Đăng ký">
         <div class="m-2">
           <ul class="flex flex-wrap gap-3">
-            <li class="relative" (click)="changeSelectEarnRegister(1)">
+            <li class="relative" (click)="changeSelectEarnRegister(1)" *ngIf="getMission>=1 && getMission<3">
               <input class="sr-only peer" type="radio" value="mission-1" name="register-earn" id="option-a">
               <label class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer"
                 [ngClass]="selectEarnRegister ==1 ? 'focus:outline-none peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent':  ''"
@@ -33,7 +33,7 @@
               </label>
             </li>
 
-            <li class="relative" (click)="changeSelectEarnRegister(2)">
+            <li class="relative" (click)="changeSelectEarnRegister(2)" *ngIf="getMission>=1 && getMission<3">
               <input class="sr-only peer" type="radio" value="mission-2" name="register-earn" id="option-b">
               <label class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50"
                 [ngClass]="selectEarnRegister ==2 ? 'focus:outline-none peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent':  ''"
@@ -49,7 +49,7 @@
               </label>
             </li>
 
-            <li class="relative" (click)="changeSelectEarnRegister(3)">
+            <li class="relative" (click)="changeSelectEarnRegister(3)" *ngIf="getMission>=1 && getMission<3">
               <input class="sr-only peer" type="radio" value="mission-3" name="register-earn" id="option-c">
               <label class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50"
                 [ngClass]="selectEarnRegister ==3 ? 'focus:outline-none peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent':  ''"
@@ -65,7 +65,7 @@
               </label>
             </li>
 
-            <li class="relative" (click)="changeSelectEarnRegister(4)">
+            <li class="relative" (click)="changeSelectEarnRegister(4)" *ngIf="getMission>=3 && getMission<=6">
               <input class="sr-only peer" type="radio" value="mission-4" name="register-earn" id="option-d">
               <label class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50"
                 [ngClass]="selectEarnRegister ==4 ? 'focus:outline-none peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent':  ''"
@@ -81,7 +81,7 @@
               </label>
             </li>
 
-            <li class="relative" (click)="changeSelectEarnRegister(5)">
+            <li class="relative" (click)="changeSelectEarnRegister(5)" *ngIf="getMission>=3 && getMission<=6">
               <input class="sr-only peer" type="radio" value="mission-5" name="register-earn" id="option-e">
               <label class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50"
                 [ngClass]="selectEarnRegister ==5 ? 'focus:outline-none peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent':  ''"
@@ -97,7 +97,7 @@
               </label>
             </li>
 
-            <li class="relative" (click)="changeSelectEarnRegister(6)">
+            <li class="relative" (click)="changeSelectEarnRegister(6)" *ngIf="getMission>=3 && getMission<=6">
               <input class="sr-only peer" type="radio" value="mission-6" name="register-earn" id="option-f">
               <label class="flex px-3.5 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50"
                 [ngClass]="selectEarnRegister ==6 ? 'focus:outline-none peer-checked:ring-[#000] peer-checked:ring-1 peer-checked:border-transparent':  ''"
@@ -126,7 +126,7 @@
                 <p class="text-sm font-medium">Nhiệm vụ {{selectEarnRegister}}</p>
                 <div class="flex items-end justify-between mt-3">
                   <div>
-                    <span class="text-base font-medium">1. Theo dõi Binance trên Facebook</span>
+                    <span class="text-base font-medium">1. Theo dõi và like bài viết Binance trên Facebook</span>
                   </div>
 
                   <ng-container *ngIf="missionData[selectEarnRegister - 1].getMission.nr1">
