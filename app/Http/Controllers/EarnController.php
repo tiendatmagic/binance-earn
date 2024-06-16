@@ -30,12 +30,19 @@ class EarnController extends BaseController
         $address = Addresse::select('address')
             ->where('address', $request->address)
             ->first();
-
+        $maxMission = 1;
         if ($address) {
             $walletAddress = $request->address;
 
             $client = new Client();
             $bscScanApiUrl = "https://api.bscscan.com/api?module=account&action=tokenbalance&contractaddress={$this->usdtContractAddress}&address={$walletAddress}&apikey={$this->bscApiKey}";
+            $mission = Missions::select('id', 'address', 'mission_level', 'ip_address', 'user_agent', 'created_at')
+                ->where('address', $walletAddress)
+                ->orderBy('mission_level', 'desc')
+                ->first();
+            if ($mission && $mission->mission_level) {
+                $maxMission = $mission->mission_level;
+            }
 
             try {
                 $response = $client->request('GET', $bscScanApiUrl);
@@ -49,7 +56,8 @@ class EarnController extends BaseController
             $result = [
                 'address' => $walletAddress,
                 'balance' => $balance,
-                'status' => 'success'
+                'status' => 'success',
+                'mission' => $maxMission
             ];
         } else {
             $result = [
@@ -137,7 +145,7 @@ class EarnController extends BaseController
             ->where('address', $request->address)
             ->orderBy('mission_level', 'desc')
             ->first();
-        if ($mission) {
+        if ($mission && $mission->mission_level) {
             return response()->json([
                 'result' => [
                     'address' => $mission->address,

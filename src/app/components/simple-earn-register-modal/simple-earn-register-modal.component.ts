@@ -19,6 +19,7 @@ export class SimpleEarnRegisterModalComponent {
   isChangeSelect = false;
   isLoading = true;
   minimumBalance = 0;
+  getMission = 0;
   missionData: any = [
     {
       id: 1,
@@ -72,6 +73,8 @@ export class SimpleEarnRegisterModalComponent {
   constructor(public dialogRef: MatDialogRef<SimpleEarnRegisterModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private earnService: EarnService, private deviceService: DeviceDetectorService) { }
 
   ngOnInit() {
+    this.getMission = this.data.mission;
+    console.log(this.getMission);
     this.isLoading = true;
     this.earnService.getMaxMission({ address: this.earnService.myAddress.address }).subscribe((res: any) => {
       var result = res['result'];
