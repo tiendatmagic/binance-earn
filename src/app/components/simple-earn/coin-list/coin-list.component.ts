@@ -20,7 +20,7 @@ export class CoinListComponent {
       this.dialog.open(SimpleEarnRegisterModalComponent, {
         disableClose: true,
         width: '90%',
-        maxWidth: '722px',
+        maxWidth: '500px',
         data: {
           mission: getMission
         }
