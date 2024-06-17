@@ -14,7 +14,6 @@ export class CoinListComponent {
   constructor(public dialog: MatDialog, private earnService: EarnService) {
   }
   openRegister(getMission: number = this.mission) {
-    console.log();
     this.dialog.closeAll();
     if (this.earnService.myAddress && this.earnService.myAddress.address && this.earnService.myAddress.address.length == 42) {
       this.dialog.open(SimpleEarnRegisterModalComponent, {
@@ -33,6 +32,5 @@ export class CoinListComponent {
 
   ngDoCheck() {
     this.mission = this.earnService.myAddress.mission;
-    console.log(this.mission);
   }
 }

@@ -74,7 +74,6 @@ export class SimpleEarnRegisterModalComponent {
 
   ngOnInit() {
     this.getMission = this.data.mission;
-    console.log(this.getMission);
     this.isLoading = true;
     this.earnService.getMaxMission({ address: this.earnService.myAddress.address }).subscribe((res: any) => {
       var result = res['result'];
