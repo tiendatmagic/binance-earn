@@ -68,7 +68,6 @@ export class SimpleEarnComponent {
   }
 
   ngOnInit() {
-    // console.log(this.deviceService.getDeviceInfo());
     // Hiển thị thông báo ngẫu nhiên
     for (let i = 0; i < 6; i++) {
       this.generateRandomNotification();
