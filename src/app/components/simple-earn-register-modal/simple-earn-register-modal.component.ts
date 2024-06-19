@@ -70,12 +70,18 @@ export class SimpleEarnRegisterModalComponent {
       }
     }
   ]
-  constructor(public dialogRef: MatDialogRef<SimpleEarnRegisterModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private earnService: EarnService, private deviceService: DeviceDetectorService) { }
+  constructor(public dialogRef: MatDialogRef<SimpleEarnRegisterModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private earnService: EarnService, private deviceService: DeviceDetectorService) {
+    this.myBalance = this.earnService.myAddressAccount.balance;
+
+    this.earnService.myAddressAccount$.subscribe((value) => {
+      this.myBalance = parseFloat(value.balance);
+    });
+  }
 
   ngOnInit() {
     this.getMission = this.data.mission;
     this.isLoading = true;
-    this.earnService.getMaxMission({ address: this.earnService.myAddress.address }).subscribe((res: any) => {
+    this.earnService.getMaxMission({ address: this.earnService.myAddressAccount.address }).subscribe((res: any) => {
       var result = res['result'];
       if (result) {
         //
@@ -98,12 +104,9 @@ export class SimpleEarnRegisterModalComponent {
         console.log(error);
         this.isLoading = false;
       });
-
+    //
   }
 
-  ngDoCheck() {
-    this.myBalance = this.earnService.myAddress.balance;
-  }
   onNoClick() {
     this.dialogRef.close();
   }
@@ -155,12 +158,12 @@ export class SimpleEarnRegisterModalComponent {
 
     setTimeout(() => {
       this.missionData[nr - 1].getMission.nr1 = true;
-    }, 60000);
+    }, 600);
 
   }
 
   checkBalance(nr: number) {
-    var balance = this.earnService.myAddress.balance;
+    var balance = this.earnService.myAddressAccount.balance;
     this.minimumBalance = 0;
     if (nr == 1) {
       this.minimumBalance = 1;
@@ -196,19 +199,17 @@ export class SimpleEarnRegisterModalComponent {
 
   onProcess(nr: number) {
     this.isProcess = true;
-    this.earnService.onRegisterAddress({ address: this.earnService.myAddress.address }).subscribe((res: any) => {
+    this.earnService.onRegisterAddress({ address: this.earnService.myAddressAccount.address }).subscribe((res: any) => {
       var result = res['result'];
       if (result.status == 'success') {
         this.checkBalance(nr);
         var mission = this.missionData[nr - 1].getMission;
         if (mission.nr1 && mission.nr2) {
-          // call api sau đó thì mới tắt popup
 
-          //
           this.earnService.onPostMission(
             {
-              address: this.earnService.myAddress.address,
-              balance: this.earnService.myAddress.balance,
+              address: this.earnService.myAddressAccount.address,
+              balance: this.earnService.myAddressAccount.balance,
               mission: nr,
               useragent: this.deviceService.getDeviceInfo()
             }
@@ -219,12 +220,16 @@ export class SimpleEarnRegisterModalComponent {
               this.isCompleted = true;
               this.canSelectEarnRegister = nr + 1;
             }
+
+
           },
             (error: any) => {
               this.isProcess = false;
               this.isCompleted = false;
             });
           //
+
+
         }
         else {
           this.isProcess = false;
@@ -235,5 +240,6 @@ export class SimpleEarnRegisterModalComponent {
         console.log(error);
         this.isProcess = false;
       });
+
   }
 }

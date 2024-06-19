@@ -102,11 +102,11 @@
         [ngClass]="mission>=3 ? 'opacity-50 bg-[#d3ffe6] text-[#03a66d] cursor-not-allowed': ((mission<0) ? 'bg-[#edeff1] text-black opacity-50 cursor-not-allowed' : 'bg-[#fcd535] hover:bg-[#fddd5d] text-black')">
         <div class="flex items-center gap-1">
           <span class="text-md whitespace-nowrap">
-            <ng-container *ngIf="mission<=3 || !mission">
+            <ng-container *ngIf="mission<3 || !mission">
               Đăng ký
             </ng-container>
 
-            <ng-container *ngIf="mission>3">
+            <ng-container *ngIf="mission>=3">
               Hoàn thành
             </ng-container>
           </span>
@@ -199,11 +199,11 @@
         [ngClass]="mission>=6 ? 'opacity-50 bg-[#d3ffe6] text-[#03a66d] cursor-not-allowed': ((mission<3) ? 'bg-[#edeff1] text-black opacity-50 cursor-not-allowed' : 'bg-[#fcd535] hover:bg-[#fddd5d] text-black')">
         <div class="flex items-center gap-1">
           <span class="text-md whitespace-nowrap">
-            <ng-container *ngIf="mission<=6 || !mission">
+            <ng-container *ngIf="mission<6 || !mission">
               Đăng ký
             </ng-container>
 
-            <ng-container *ngIf="mission>6">
+            <ng-container *ngIf="mission>=6">
               Hoàn thành
             </ng-container>
           </span>
@@ -301,7 +301,7 @@
               Đăng ký
             </ng-container>
 
-            <ng-container *ngIf="mission>9">
+            <ng-container *ngIf="mission>=9">
               Hoàn thành
             </ng-container>
           </span>

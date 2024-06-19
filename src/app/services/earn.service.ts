@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { MatDialog } from '@angular/material/dialog';
 import { NotifyModalComponent } from '../components/simple-earn/notify-modal/notify-modal.component';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,20 @@ import { NotifyModalComponent } from '../components/simple-earn/notify-modal/not
 export class EarnService {
   public urlEnv = environment.production ? environment.apiUrl : environment.apiUrlLocal;
   myAddress: any = [];
+  private myAddressAccountSubject = new BehaviorSubject<any>({
+
+  });
+  public myAddressAccount$ = this.myAddressAccountSubject.asObservable();
+
   constructor(private http: HttpClient, public dialog: MatDialog) {
 
+  }
+
+  get myAddressAccount(): any {
+    return this.myAddressAccountSubject.value;
+  }
+  set myAddressAccount(value: any) {
+    this.myAddressAccountSubject.next(value);
   }
 
   onRegisterAddress(data: any) {

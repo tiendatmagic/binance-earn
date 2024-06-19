@@ -17,6 +17,7 @@ import { CoinListComponent } from './components/simple-earn/coin-list/coin-list.
 import { RegisteredAddressComponent } from './components/simple-earn/registered-address/registered-address.component';
 import { HttpClient, HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NotifyModalComponent } from './components/simple-earn/notify-modal/notify-modal.component';
+import { RegisteredAddressModalComponent } from './components/simple-earn/registered-address-modal/registered-address-modal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NotifyModalComponent } from './components/simple-earn/notify-modal/noti
     SimpleEarnRegisterModalComponent,
     CoinListComponent,
     RegisteredAddressComponent,
-    NotifyModalComponent
+    NotifyModalComponent,
+    RegisteredAddressModalComponent
   ],
   imports: [
     BrowserModule,
