@@ -1,0 +1,33 @@
+<div mat-dialog-content>
+  <div class="relative">
+    <p class="text-lg font-medium text-center font-robo">
+
+    </p>
+    <div class="absolute top-[0px] right-[10px] cursor-pointer w-10 h-10 flex items-center justify-center z-40"
+      (click)="onNoClick()">
+      <mat-icon>close</mat-icon>
+    </div>
+  </div>
+</div>
+<div class="p-5">
+  <div>
+    <label for="" class="text-base font-medium">Nhập địa chỉ tham gia</label>
+    <form [formGroup]="registerForm">
+      <div class="block gap-3 mt-2">
+        <div class="relative w-full">
+          <input type="text" placeholder="Nhập địa chỉ tham gia"
+            class="border-[1px] rounded-lg px-3 py-2.5 bg-[#ffffff] dark:bg-[#12161d] border-[#e9e9e9] outline-none focus:border-[#fcd535] focus:shadow-none focus:ring-0 w-full"
+            name="address" [formControl]="address" required="">
+        </div>
+        <div class="mt-1">
+          <button
+            class="bg-[#fcd535] hover:bg-[#fddd5d] w-full py-3 mt-3 mr-2 text-sm font-medium text-black rounded-lg px-7"
+            (click)="register();" [disabled]="isDisabled"
+            [ngClass]="isDisabled ? 'cursor-not-allowed opacity-50' : 'opacity-100'">
+            <div class="flex items-center justify-center gap-1"><span class="text-md"> Đăng ký </span></div>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

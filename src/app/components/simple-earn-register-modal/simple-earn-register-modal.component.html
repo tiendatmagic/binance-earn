@@ -125,7 +125,7 @@
               <div class="mt-3">
                 <p class="text-sm font-medium">Nhiệm vụ {{selectEarnRegister}}</p>
                 <div class="flex items-end justify-between mt-3">
-                  <div>
+                  <div class="w-[300px]">
                     <span class="text-base font-medium">1. Theo dõi và like bài viết Binance trên Facebook</span>
                   </div>
 
@@ -155,7 +155,7 @@
                 </div>
 
                 <div class="flex items-end justify-between mt-5">
-                  <div>
+                  <div class="w-[300px]">
                     <span class="text-base font-medium">2. Nạp {{ selectEarnRegister == 1 ? '1' : ''}} {{
                       selectEarnRegister == 2 ?
                       '10'
@@ -245,10 +245,13 @@
           </ng-container>
         </div>
 
-        <div *ngIf="!(!isProcess && !isCompleted && !isChangeSelect) && !(!isProcess && isCompleted && !isChangeSelect)"
-          class="text-red-500">
-          Bạn chưa hoàn thành nhiệm vụ {{ selectEarnRegister }}
-        </div>
+        <ng-container *ngIf="!isLoading">
+          <div *ngIf="(!isProcess && !isCompleted && isChangeSelect) || (!isProcess && !isCompleted && !isChangeSelect)"
+            class="text-red-500">
+            Bạn chưa hoàn thành nhiệm vụ {{ selectEarnRegister }}
+          </div>
+        </ng-container>
+
       </mat-tab>
       <mat-tab label="Quy tắc sản phẩm">
         <div class="m-2">
