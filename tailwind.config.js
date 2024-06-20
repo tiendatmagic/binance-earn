@@ -10,7 +10,11 @@ module.exports = {
     extend: {
       colors: {
         primary: { "50": "#eff6ff", "100": "#dbeafe", "200": "#bfdbfe", "300": "#93c5fd", "400": "#60a5fa", "500": "#3b82f6", "600": "#2563eb", "700": "#1d4ed8", "800": "#1e40af", "900": "#1e3a8a", "950": "#172554" }
-      }
+      },
+      boxShadow: {
+        'card': '0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%)',
+        'menu': '0 2px 4px -1px #0003, 0 4px 5px #00000024, 0 1px 10px #0000001f'
+      },
     },
     fontFamily: {
       'body': [

@@ -1,44 +1,49 @@
 <div class="mb-3">
-  <ng-container *ngIf="myAddress">
-    <p class="m-0 text-xl font-medium lg:text-3xl">
-      Xin chào
-    </p>
+  <div class="bg-white border-[1px] border-[#eaecef] p-3 rounded-xl max-w-[600px] flex"
+    [ngClass]="myAddress ? 'justify-center' : ''">
+    <div class="w-full">
+      <ng-container *ngIf="myAddress">
+        <p class="m-0 text-xl font-medium lg:text-3xl">
+          Xin chào
+        </p>
 
-    <p class="m-0 text-base font-medium">
-      Số dư: <span class="text-[#03a66d] font-medium">{{ balance | number }}</span> USDT
-    </p>
+        <p class="m-0 text-base font-medium">
+          Số dư: <span class="text-[#03a66d] font-medium">{{ balance | number }}</span> USDT
+        </p>
 
-    <div class="items-center block gap-3 mt-2 sm:flex">
-      <div class="relative w-full sm:w-[420px]">
-        <div type="text"
-          class="border-[1px] rounded-lg px-3 h-11 border-[#e9e9e9] outline-none focus:border-[#fcd535] focus:shadow-none focus:ring-0 w-full overflow-x-auto overflow-y-hidden bg-[#eaecef]"
-          name="address" required="">
-          {{ myAddress }}
+        <div class="items-center justify-between block gap-3 mt-2 sm:flex">
+          <div class="relative w-full sm:w-[440px]">
+            <div type="text"
+              class="border-[1px] rounded-lg px-3 h-11 border-[#e9e9e9] outline-none focus:border-[#fcd535] focus:shadow-none focus:ring-0 w-full overflow-x-auto overflow-y-hidden bg-[#eaecef]"
+              name="address" required="">
+              {{ myAddress }}
+            </div>
+          </div>
+
+          <button
+            class="bg-[#fcd535] hover:bg-[#fddd5d] w-full py-3 mt-3 text-sm font-medium text-black rounded-lg px-7 sm:mt-0 sm:w-auto"
+            (click)="removeRegister();" [disabled]="isDisabled"
+            [ngClass]="isDisabled ? 'cursor-not-allowed opacity-50' : 'opacity-100'">
+            <div class="flex items-center justify-center gap-1"><span class="text-md"> Đăng xuất </span></div>
+          </button>
         </div>
-      </div>
+      </ng-container>
 
-      <button
-        class="bg-[#fcd535] hover:bg-[#fddd5d] w-full py-3 mt-3 mr-2 text-sm font-medium text-black rounded-lg px-7 sm:mt-0 sm:w-auto"
-        (click)="removeRegister();" [disabled]="isDisabled"
-        [ngClass]="isDisabled ? 'cursor-not-allowed opacity-50' : 'opacity-100'">
-        <div class="flex items-center justify-center gap-1"><span class="text-md"> Đăng xuất </span></div>
-      </button>
-    </div>
-  </ng-container>
-
-  <ng-container *ngIf="!myAddress">
-    <label for="" class="text-base font-medium">Đăng nhập để tham gia</label>
-    <div class="mt-2">
-      <button
-        class="bg-[#fcd535] hover:bg-[#fddd5d] w-full py-3 mt-3 mr-2 text-sm font-medium text-black rounded-lg px-7 sm:mt-0 sm:w-auto"
-        (click)="showRegisterModal()">
-        <div class="flex items-center justify-center gap-1">
-          <span class="text-md"> Đăng nhập </span>
+      <ng-container *ngIf="!myAddress">
+        <label for="" class="text-base font-medium">Đăng nhập để tham gia</label>
+        <div class="mt-2">
+          <button
+            class="bg-[#fcd535] hover:bg-[#fddd5d] w-full py-3 mt-3 text-sm font-medium text-black rounded-lg px-7 sm:mt-0 sm:w-auto"
+            (click)="showRegisterModal()">
+            <div class="flex items-center justify-center gap-1">
+              <span class="text-md"> Đăng nhập </span>
+            </div>
+          </button>
         </div>
-      </button>
+
+
+
+      </ng-container>
     </div>
-
-
-
-  </ng-container>
+  </div>
 </div>
