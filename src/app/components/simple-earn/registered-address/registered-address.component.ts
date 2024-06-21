@@ -28,7 +28,6 @@ export class RegisteredAddressComponent {
 
     this.earnService.myAddressAccount$.subscribe((value) => {
       clearInterval(this.isInterval);
-      console.log(value);
       this.myAddress = value.address;
       this.balance = parseFloat(value.balance);
 

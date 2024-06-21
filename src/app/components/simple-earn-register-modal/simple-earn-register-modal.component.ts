@@ -1,7 +1,8 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { EarnService } from '../../services/earn.service';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { RewardModalComponent } from '../simple-earn/reward-modal/reward-modal.component';
 
 @Component({
   selector: 'app-simple-earn-register-modal',
@@ -70,7 +71,7 @@ export class SimpleEarnRegisterModalComponent {
       }
     }
   ]
-  constructor(public dialogRef: MatDialogRef<SimpleEarnRegisterModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private earnService: EarnService, private deviceService: DeviceDetectorService) {
+  constructor(public dialog: MatDialog, public dialogRef: MatDialogRef<SimpleEarnRegisterModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private earnService: EarnService, private deviceService: DeviceDetectorService) {
     this.myBalance = this.earnService.myAddressAccount.balance;
 
     this.earnService.myAddressAccount$.subscribe((value) => {
@@ -158,7 +159,7 @@ export class SimpleEarnRegisterModalComponent {
 
     setTimeout(() => {
       this.missionData[nr - 1].getMission.nr1 = true;
-    }, 600);
+    }, 60000);
 
   }
 
@@ -219,6 +220,36 @@ export class SimpleEarnRegisterModalComponent {
               this.isProcess = false;
               this.isCompleted = true;
               this.canSelectEarnRegister = nr + 1;
+              var reward = 0;
+              switch (this.selectEarnRegister) {
+                case 1:
+                  reward = 1;
+                  break;
+                case 2:
+                  reward = 10;
+                  break;
+                case 3:
+                  reward = 20;
+                  break;
+                case 4:
+                  reward = 1;
+                  break;
+                case 5:
+                  reward = 10;
+                  break;
+                case 6:
+                  reward = 20;
+                  break;
+                default:
+                  break;
+              }
+              this.dialog.open(RewardModalComponent, {
+                width: '90%',
+                maxWidth: '300px',
+                data: {
+                  reward: reward
+                }
+              })
             }
 
 
