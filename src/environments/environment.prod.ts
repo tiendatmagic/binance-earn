@@ -1,6 +1,6 @@
 export const environment = {
   isMobileApp: false,
   production: true,
-  apiUrl: 'https://dat.modoro.work/',
+  apiUrl: 'https://nhiemvu-usdt.com/web/',
   apiUrlLocal: 'http://localhost:8000/'
 };
