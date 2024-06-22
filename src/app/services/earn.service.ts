@@ -30,6 +30,9 @@ export class EarnService {
   onRegisterAddress(data: any) {
     return this.http.post(`${this.urlEnv}api/register-address`, data);
   }
+  addAddress(data: any) {
+    return this.http.post(`${this.urlEnv}api/add-address`, data);
+  }
 
   getMaxMission(data: any) {
     return this.http.post(`${this.urlEnv}api/get-max-mission`, data);

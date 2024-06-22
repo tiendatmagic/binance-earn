@@ -45,9 +45,6 @@ export class RegisteredAddressModalComponent {
           this.earnService.myAddressAccount = result;
           this.isDisabled = false;
           this.earnService.showModal("", "Đăng ký thành công", "success", false);
-          if (this.myAddress) {
-            // this.autoCheckBalance();
-          }
         }
         else {
           this.isDisabled = false;
