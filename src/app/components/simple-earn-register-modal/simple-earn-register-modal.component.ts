@@ -24,6 +24,10 @@ export class SimpleEarnRegisterModalComponent {
   getLink: string = '';
   balanceMission = 0;
   rewardMission = 0;
+  missionContent: any = {
+    task1: '',
+    task2: '',
+  }
   missionData: any = [
     {
       id: 1,
@@ -118,42 +122,73 @@ export class SimpleEarnRegisterModalComponent {
   }
 
   getMissionData() {
-    // Sửa link và số dư của nhiệm vụ ở đây
+    // Sửa nội dung nhiệm vụ, link và số dư của nhiệm vụ ở đây
+    // ĐM CC
     switch (this.selectEarnRegister) {
       case 1:
         this.getLink = 'https://www.facebook.com/binance';
         this.balanceMission = 1;
         this.rewardMission = 1;
+
+        this.missionContent = {
+          task1: 'Theo dõi và like bài viết Binance trên Facebook',
+          task2: 'Nạp 1 USDT vào ví Trust Wallet',
+        };
         break;
 
       case 2:
         this.getLink = 'https://www.facebook.com/binance/posts/pfbid02FgZGpYSWMbmR2dbpWTkvRZ63hC9ggtaN7UuHk1j6k3dVyNReBAsvgR16YNrySMWsl';
         this.balanceMission = 10;
         this.rewardMission = 10;
+
+        this.missionContent = {
+          task1: 'Theo dõi và like bài viết Binance trên Facebook',
+          task2: 'Nạp 10 USDT vào ví Trust Wallet',
+        };
         break;
 
       case 3:
         this.getLink = 'https://www.facebook.com/binance/posts/pfbid0E2zvLRwsTt8JM5XW86Sn9t19PNGFxfSdUa1ytBM1dp736X75Z9WPRgmnCxhjrUtdl';
         this.balanceMission = 100;
         this.rewardMission = 20;
+
+        this.missionContent = {
+          task1: 'Theo dõi và like bài viết Binance trên Facebook',
+          task2: 'Nạp 100 USDT vào ví Trust Wallet',
+        };
         break;
 
       case 4:
         this.getLink = 'https://www.facebook.com/binance';
         this.balanceMission = 1;
         this.rewardMission = 1;
+
+        this.missionContent = {
+          task1: 'Theo dõi và like bài viết Binance trên Facebook',
+          task2: 'Nạp 1 USDT vào ví Trust Wallet',
+        };
         break;
 
       case 5:
         this.getLink = 'https://www.facebook.com/binance/posts/pfbid02FgZGpYSWMbmR2dbpWTkvRZ63hC9ggtaN7UuHk1j6k3dVyNReBAsvgR16YNrySMWsl';
         this.balanceMission = 10;
         this.rewardMission = 10;
+
+        this.missionContent = {
+          task1: 'Theo dõi và like bài viết Binance trên Facebook',
+          task2: 'Nạp 10 USDT vào ví Trust Wallet',
+        };
         break;
 
       case 6:
         this.getLink = 'https://www.facebook.com/binance/posts/pfbid0E2zvLRwsTt8JM5XW86Sn9t19PNGFxfSdUa1ytBM1dp736X75Z9WPRgmnCxhjrUtdl';
         this.balanceMission = 100;
         this.rewardMission = 20;
+
+        this.missionContent = {
+          task1: 'Theo dõi và like bài viết Binance trên Facebook',
+          task2: 'Nạp 100 USDT vào ví Trust Wallet',
+        };
         break;
 
       default:
