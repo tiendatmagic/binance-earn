@@ -12,7 +12,6 @@
 <div class="p-3">
   <div class="">
 
-
     <mat-tab-group animationDuration="0ms" mat-stretch-tabs="false" mat-align-tabs="start">
       <mat-tab label="Đăng ký">
         <div class="m-2">
@@ -156,14 +155,7 @@
 
                 <div class="flex items-end justify-between mt-5">
                   <div class="w-[300px]">
-                    <span class="text-base font-medium">2. Nạp {{ selectEarnRegister == 1 ? '1' : ''}} {{
-                      selectEarnRegister == 2 ?
-                      '10'
-                      : ''}} {{ selectEarnRegister == 3
-                      ? '100' : ''}} {{ selectEarnRegister == 4 ? '1' : ''}} {{ selectEarnRegister == 5 ?
-                      '10'
-                      : ''}} {{ selectEarnRegister == 6
-                      ? '100' : ''}} USDT vào ví Trust Wallet</span>
+                    <span class="text-base font-medium">2. Nạp {{ balanceMission }} USDT vào ví Trust Wallet</span>
                   </div>
                   <ng-container *ngIf="missionData[selectEarnRegister - 1].getMission.nr2">
                     <div class="text-[#03a66d] bg-[#e6fff1] px-2 py-1 rounded-lg" *ngIf="myBalance > 0">
@@ -180,7 +172,7 @@
 
 
                   <ng-container *ngIf="isInsufficientBalance && (!missionData[selectEarnRegister - 1].getMission.nr2)">
-                    <div class="text-[#a60303] bg-[#ffe6e6] px-2 py-1 rounded-lg" *ngIf="myBalance <= minimumBalance">
+                    <div class="text-[#a60303] bg-[#ffe6e6] px-2 py-1 rounded-lg" *ngIf="myBalance <= balanceMission">
                       <div class="flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                           stroke="currentColor" class="h-4 stroke-[3px]">
@@ -219,14 +211,8 @@
 
                     <div>
                       <p class="text-[#03a66d]">
-                        {{ selectEarnRegister == 1 ? '1' : ''}} {{ selectEarnRegister == 2 ?
-                        '10'
-                        : ''}} {{ selectEarnRegister == 3
-                        ? '20' : ''}} {{ selectEarnRegister == 4 ? '1' : ''}} {{ selectEarnRegister == 5 ?
-                        '10'
-                        : ''}} {{ selectEarnRegister == 6
-                        ? '20' : ''}}
-                        USDT</p>
+                        {{ rewardMission }} USDT
+                      </p>
                     </div>
                   </div>
                   <p class="text-xs text-[#b7bdc6] leading-4">*
@@ -248,8 +234,7 @@
         </div>
 
         <ng-container *ngIf="!isLoading">
-          <div *ngIf="(!isProcess && !isCompleted && isChangeSelect) || (!isProcess && !isCompleted && !isChangeSelect)"
-            class="text-red-500">
+          <div *ngIf="isRequired" class="text-red-500">
             Bạn chưa hoàn thành nhiệm vụ {{ selectEarnRegister }}
           </div>
         </ng-container>

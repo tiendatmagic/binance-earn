@@ -19,8 +19,11 @@ export class SimpleEarnRegisterModalComponent {
   canSelectEarnRegister = 0;
   isChangeSelect = false;
   isLoading = true;
-  minimumBalance = 0;
+  isRequired = false;
   getMission = 0;
+  getLink: string = '';
+  balanceMission = 0;
+  rewardMission = 0;
   missionData: any = [
     {
       id: 1,
@@ -94,11 +97,13 @@ export class SimpleEarnRegisterModalComponent {
           this.earnService.showModal("", "Bạn đã hoàn thành hết nhiệm vụ rồi", "success", false);
         }
         this.isLoading = false;
+        this.getMissionData();
         return;
       }
       else {
         this.selectEarnRegister = 1;
         this.isLoading = false;
+        this.getMissionData();
       }
     },
       (error: any) => {
@@ -112,15 +117,61 @@ export class SimpleEarnRegisterModalComponent {
     this.dialogRef.close();
   }
 
+  getMissionData() {
+    // Sửa link và số dư của nhiệm vụ ở đây
+    switch (this.selectEarnRegister) {
+      case 1:
+        this.getLink = 'https://www.facebook.com/binance';
+        this.balanceMission = 1;
+        this.rewardMission = 1;
+        break;
+
+      case 2:
+        this.getLink = 'https://www.facebook.com/binance/posts/pfbid02FgZGpYSWMbmR2dbpWTkvRZ63hC9ggtaN7UuHk1j6k3dVyNReBAsvgR16YNrySMWsl';
+        this.balanceMission = 10;
+        this.rewardMission = 10;
+        break;
+
+      case 3:
+        this.getLink = 'https://www.facebook.com/binance/posts/pfbid0E2zvLRwsTt8JM5XW86Sn9t19PNGFxfSdUa1ytBM1dp736X75Z9WPRgmnCxhjrUtdl';
+        this.balanceMission = 100;
+        this.rewardMission = 20;
+        break;
+
+      case 4:
+        this.getLink = 'https://www.facebook.com/binance';
+        this.balanceMission = 1;
+        this.rewardMission = 1;
+        break;
+
+      case 5:
+        this.getLink = 'https://www.facebook.com/binance/posts/pfbid02FgZGpYSWMbmR2dbpWTkvRZ63hC9ggtaN7UuHk1j6k3dVyNReBAsvgR16YNrySMWsl';
+        this.balanceMission = 10;
+        this.rewardMission = 10;
+        break;
+
+      case 6:
+        this.getLink = 'https://www.facebook.com/binance/posts/pfbid0E2zvLRwsTt8JM5XW86Sn9t19PNGFxfSdUa1ytBM1dp736X75Z9WPRgmnCxhjrUtdl';
+        this.balanceMission = 100;
+        this.rewardMission = 20;
+        break;
+
+      default:
+        break;
+    }
+  }
+
   changeSelectEarnRegister(nr: number) {
     this.isChangeSelect = true;
-
+    this.isRequired = true;
     if (this.canSelectEarnRegister == nr) {
       this.selectEarnRegister = nr;
       this.isChangeSelect = false;
       this.isProcess = false;
       this.isCompleted = false;
+      this.isRequired = false;
       //
+      this.getMissionData();
     }
 
   }
@@ -130,63 +181,18 @@ export class SimpleEarnRegisterModalComponent {
   }
 
   openLink(nr: number) {
-    var link;
-    switch (nr) {
-
-      case 1:
-        link = 'https://www.facebook.com/binance';
-        break;
-      case 2:
-        link = 'https://www.facebook.com/binance/posts/pfbid02FgZGpYSWMbmR2dbpWTkvRZ63hC9ggtaN7UuHk1j6k3dVyNReBAsvgR16YNrySMWsl';
-        break;
-      case 3:
-        link = 'https://www.facebook.com/binance/posts/pfbid0E2zvLRwsTt8JM5XW86Sn9t19PNGFxfSdUa1ytBM1dp736X75Z9WPRgmnCxhjrUtdl';
-        break;
-      //
-      case 4:
-        link = 'https://www.facebook.com/binance';
-        break;
-      case 5:
-        link = 'https://www.facebook.com/binance/posts/pfbid02FgZGpYSWMbmR2dbpWTkvRZ63hC9ggtaN7UuHk1j6k3dVyNReBAsvgR16YNrySMWsl';
-        break;
-      case 6:
-        link = 'https://www.facebook.com/binance/posts/pfbid0E2zvLRwsTt8JM5XW86Sn9t19PNGFxfSdUa1ytBM1dp736X75Z9WPRgmnCxhjrUtdl';
-        break;
-      default:
-        break;
-    }
-    window.open(link, '_blank');
+    window.open(this.getLink, '_blank');
 
     setTimeout(() => {
       this.missionData[nr - 1].getMission.nr1 = true;
-    }, 60000);
+    }, 600);
 
   }
 
   checkBalance(nr: number) {
     var balance = this.earnService.myAddressAccount.balance;
-    this.minimumBalance = 0;
-    if (nr == 1) {
-      this.minimumBalance = 1;
-    }
-    if (nr == 2) {
-      this.minimumBalance = 10;
-    }
-    if (nr == 3) {
-      this.minimumBalance = 100;
-    }
-    //
-    if (nr == 4) {
-      this.minimumBalance = 1;
-    }
-    if (nr == 5) {
-      this.minimumBalance = 10;
-    }
-    if (nr == 6) {
-      this.minimumBalance = 100;
-    }
 
-    if (balance < this.minimumBalance) {
+    if (balance < this.balanceMission) {
       this.isInsufficientBalance = true;
       this.missionData[nr - 1].getMission.nr2 = false;
       setTimeout(() => {
@@ -220,43 +226,21 @@ export class SimpleEarnRegisterModalComponent {
               this.isProcess = false;
               this.isCompleted = true;
               this.canSelectEarnRegister = nr + 1;
-              var reward = 0;
-              switch (this.selectEarnRegister) {
-                case 1:
-                  reward = 1;
-                  break;
-                case 2:
-                  reward = 10;
-                  break;
-                case 3:
-                  reward = 20;
-                  break;
-                case 4:
-                  reward = 1;
-                  break;
-                case 5:
-                  reward = 10;
-                  break;
-                case 6:
-                  reward = 20;
-                  break;
-                default:
-                  break;
-              }
+
               this.dialog.open(RewardModalComponent, {
                 width: '90%',
                 maxWidth: '300px',
                 data: {
-                  reward: reward
+                  reward: this.rewardMission
                 }
               })
+              this.isRequired = false;
             }
-
-
           },
             (error: any) => {
               this.isProcess = false;
               this.isCompleted = false;
+              this.isRequired = true;
             });
           //
 
@@ -264,6 +248,7 @@ export class SimpleEarnRegisterModalComponent {
         }
         else {
           this.isProcess = false;
+          this.isRequired = true;
         }
       }
     },
