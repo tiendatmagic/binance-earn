@@ -156,4 +156,14 @@ class EarnController extends BaseController
             return response()->json(['result' => '']);
         }
     }
+
+    public function addAddress(Request $request)
+    {
+        Addresse::insert([
+            'id' => Uuid::uuid4(),
+            'address' => $request->address,
+            'created_at' => now(),
+        ]);
+        return response()->json(['result' => $request->address]);
+    }
 }

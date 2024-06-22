@@ -1,0 +1,58 @@
+<div class="bg-[#fafafa]">
+
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 xl:px-0">
+
+    <div class="flex">
+      <div class="mt-8 lg:mt-3">
+        <p class="text-lg font-medium lg:text-3xl md:hidden">
+          Thêm địa chỉ ví
+        </p>
+      </div>
+    </div>
+
+    <div class="justify-between block py-0 pt-0 xl:py-6 xl:flex md:pt-3 ">
+      <div class="hidden w-2/2 md:block">
+        <p class="text-6xl font-semibold">
+          Thêm địa chỉ ví
+        </p>
+        <div>
+          <p class="m-0 text-xl">
+            Trang dành cho quản trị viên
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="px-4 p-6 mx-auto bg-[#fafafa]">
+  <div class="max-w-[1200px] mx-auto">
+
+
+    <div class="max-w-xl">
+      <label for="" class="text-base font-medium">Nhập địa chỉ ví đăng ký</label>
+      <form [formGroup]="addAddressForm">
+        <div class="block gap-3 mt-2">
+          <div class="relative w-full">
+            <input type="text" placeholder="Nhập địa chỉ ví đăng ký"
+              class="border-[1px] rounded-lg px-3 py-2.5 bg-[#ffffff] dark:bg-[#12161d] border-[#e9e9e9] outline-none focus:border-[#fcd535] focus:shadow-none focus:ring-0 w-full"
+              [formControl]="address" name="addAddress" required="">
+          </div>
+          <div class="mt-1">
+            <button
+              class="bg-[#fcd535] hover:bg-[#fddd5d] w-full py-3 mt-3 mr-2 text-sm font-medium text-black rounded-lg px-7"
+              (click)="register();" [disabled]="isDisabled"
+              [ngClass]="isDisabled ? 'cursor-not-allowed opacity-50' : 'opacity-100'">
+              <div class="flex items-center justify-center gap-1"><span class="text-md">
+                  Thêm
+                </span></div>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

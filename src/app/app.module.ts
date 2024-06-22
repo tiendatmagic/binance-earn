@@ -19,6 +19,7 @@ import { HttpClient, HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common
 import { NotifyModalComponent } from './components/simple-earn/notify-modal/notify-modal.component';
 import { RegisteredAddressModalComponent } from './components/simple-earn/registered-address-modal/registered-address-modal.component';
 import { RewardModalComponent } from './components/simple-earn/reward-modal/reward-modal.component';
+import { AddAddressComponent } from './components/add-address/add-address.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { RewardModalComponent } from './components/simple-earn/reward-modal/rewa
     RegisteredAddressComponent,
     NotifyModalComponent,
     RegisteredAddressModalComponent,
-    RewardModalComponent
+    RewardModalComponent,
+    AddAddressComponent
   ],
   imports: [
     BrowserModule,
