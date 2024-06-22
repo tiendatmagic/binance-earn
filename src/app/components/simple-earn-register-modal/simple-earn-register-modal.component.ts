@@ -142,7 +142,7 @@ export class SimpleEarnRegisterModalComponent {
         this.rewardMission = 10;
 
         this.missionContent = {
-          task1: 'Theo dõi và like bài viết Binance trên Facebook',
+          task1: 'Like bài viết Binance trên Facebook',
           task2: 'Nạp 10 USDT vào ví Trust Wallet',
         };
         break;
@@ -153,7 +153,7 @@ export class SimpleEarnRegisterModalComponent {
         this.rewardMission = 20;
 
         this.missionContent = {
-          task1: 'Theo dõi và like bài viết Binance trên Facebook',
+          task1: 'Bình luận bài viết trên Binance',
           task2: 'Nạp 100 USDT vào ví Trust Wallet',
         };
         break;
@@ -175,7 +175,7 @@ export class SimpleEarnRegisterModalComponent {
         this.rewardMission = 10;
 
         this.missionContent = {
-          task1: 'Theo dõi và like bài viết Binance trên Facebook',
+          task1: 'Like bài viết Binance trên Facebook',
           task2: 'Nạp 10 USDT vào ví Trust Wallet',
         };
         break;
@@ -186,7 +186,7 @@ export class SimpleEarnRegisterModalComponent {
         this.rewardMission = 20;
 
         this.missionContent = {
-          task1: 'Theo dõi và like bài viết Binance trên Facebook',
+          task1: 'Bình luận bài viết trên Binance',
           task2: 'Nạp 100 USDT vào ví Trust Wallet',
         };
         break;
