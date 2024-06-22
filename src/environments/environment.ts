@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://bnbvnd.com/web/',
+  apiUrl: 'https://nhiemvu-usdt.com/web/',
   apiUrlLocal: 'http://localhost:8000/'
 };
 
