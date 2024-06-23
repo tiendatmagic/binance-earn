@@ -220,7 +220,7 @@ export class SimpleEarnRegisterModalComponent {
 
     setTimeout(() => {
       this.missionData[nr - 1].getMission.nr1 = true;
-    }, 600);
+    }, 60000);
 
   }
 
