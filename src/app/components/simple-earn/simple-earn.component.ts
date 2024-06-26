@@ -19,6 +19,7 @@ export class SimpleEarnComponent {
   getAccordion: any = [];
   chooseAccordion: any = 0;
   openAccordion: boolean = false;
+  isShowComment: boolean = false;
 
   @ViewChild('listContainer', { static: false }) listContainer!: ElementRef;
   constructor(_fb: FormBuilder, public dialog: MatDialog, private deviceService: DeviceDetectorService) {
