@@ -20,13 +20,15 @@ export class SimpleEarnComponent {
   chooseAccordion: any = 0;
   openAccordion: boolean = false;
   isShowComment: boolean = false;
+  day: number = 0;
+  hour: number = 0;
+  minute: number = 0;
+  second: number = 0;
 
   @ViewChild('listContainer', { static: false }) listContainer!: ElementRef;
   constructor(_fb: FormBuilder, public dialog: MatDialog, private deviceService: DeviceDetectorService) {
 
   }
-
-
 
   // Hàm tạo chuỗi ngẫu nhiên
   generateRandomString(length: any) {
@@ -146,6 +148,43 @@ export class SimpleEarnComponent {
       this.getAccordion.push(this.accordion[i]);
     }
 
+    //
+    setInterval(() => {
+      this.countDown();
+    }, 1000);
+  }
+
+  countDown() {
+    // Sắp xếp theo tháng, ngày, năm, giờ, phút, giờ nha ĐM
+    var countDate = new Date('7-1-2024 00:00:00').getTime();
+    var now = new Date().getTime();
+    var gap = countDate - now;
+
+    var second = 1000;
+    var minute = second * 60;
+    var hour = minute * 60;
+    var day = hour * 24;
+    var d: any = Math.floor(gap / (day));
+    var h: any = Math.floor((gap % (day)) / (hour));
+    var m: any = Math.floor((gap % (hour)) / (minute));
+    var s: any = Math.floor((gap % (minute)) / second);
+
+    if (d < 10) {
+      d = '0' + d;
+    }
+    if (h < 10) {
+      h = '0' + h;
+    }
+    if (m < 10) {
+      m = '0' + m;
+    }
+    if (s < 10) {
+      s = '0' + s;
+    }
+    this.day = d;
+    this.hour = h;
+    this.minute = m;
+    this.second = s;
   }
 
   onMoreAccordion(size: number) {

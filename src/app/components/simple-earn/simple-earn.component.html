@@ -115,7 +115,8 @@
 <div class="max-w-[1200px] px-4 sm:px-6 xl:px-0 mx-auto">
   <div class="gap-3 py-3 md:flex md:py-10">
 
-    <div class="flex gap-3">
+    <div class="flex items-center gap-3">
+      <!--
       <div class="md:w-[345px] flex-1">
         <div class="relative w-full">
           <input type="text"
@@ -129,6 +130,15 @@
                 fill="currentColor"></path>
             </svg>
           </div>
+        </div>
+      </div>
+       -->
+      <div class="md:w-[345px] flex-1 text-sm sm:text-base">
+        <div class="flex flex-wrap justify-between text-center">
+          <div class="border-r-gray-300 border-r-[1px] py-0 px-1 w-1/4 whitespace-nowrap">{{ day }} ngày</div>
+          <div class="border-r-gray-300 border-r-[1px] py-0 px-1 w-1/4 whitespace-nowrap">{{ hour }} giờ</div>
+          <div class="border-r-gray-300 border-r-[1px] py-0 px-1 w-1/4 whitespace-nowrap">{{ minute }} phút</div>
+          <div class="w-1/4 px-2 py-0 whitespace-nowrap">{{ second }} giây</div>
         </div>
       </div>
 
@@ -304,7 +314,7 @@
           <div id="accordion-comment-body-1">
             <div class="p-5 text-base text-[#000] rounded-[0_0_12px_12px] relative bottom-1.5">
               <!-- Item 1 -->
-              <div>
+              <div class="py-4">
                 <div class="flex gap-3">
                   <div class="w-14 h-14">
                     <img src="https://picsum.photos/100/100" alt="" class="w-full h-full rounded-full">
@@ -325,7 +335,7 @@
 
                 <div class="py-5 text-black">
                   <p>Tuyệt vời</p>
-                  <div class="w-40">
+                  <div class="max-w-64">
                     <img
                       src="https://lh3.googleusercontent.com/Ti2AWbVZpAm9yvd-eYKoeO5AlLo_NupyCaDOqLCJWP0NP4ta0hBN7vGWPf99H2ke2V3nYm_HFCrBNAtIPoHJ1G7Gi5133cuGj8HhOwMtoI8RkUyCAJLvnG6NL0YMsPUWEYC9UYAB"
                       alt="" class="w-full">
@@ -335,7 +345,7 @@
               </div>
 
               <!-- Item 2 -->
-              <div>
+              <div class="py-4 border-t border-gray-200">
                 <div class="flex gap-3">
                   <div class="w-14 h-14">
                     <img src="https://picsum.photos/100/101" alt="" class="w-full h-full rounded-full">
@@ -356,7 +366,7 @@
 
                 <div class="py-5 text-black">
                   <p>Tuyệt vời</p>
-                  <div class="w-40">
+                  <div class="max-w-64">
                     <img src="https://cdn.coin68.com/images/20230929063948-2695392f-3a85-4605-9e09-4117dc52e732-66.jpg"
                       alt="" class="w-full">
                   </div>
