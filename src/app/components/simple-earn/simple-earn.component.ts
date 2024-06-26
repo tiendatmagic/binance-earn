@@ -156,7 +156,8 @@ export class SimpleEarnComponent {
 
   countDown() {
     // Sắp xếp theo tháng, ngày, năm, giờ, phút, giờ nha ĐM
-    var countDate = new Date('7-1-2024 00:00:00').getTime();
+    var countDate = new Date('8-1-2024 00:00:00').getTime();
+    // Tức là ngày 1 tháng 8 nha ĐM
     var now = new Date().getTime();
     var gap = countDate - now;
 
@@ -169,18 +170,27 @@ export class SimpleEarnComponent {
     var m: any = Math.floor((gap % (hour)) / (minute));
     var s: any = Math.floor((gap % (minute)) / second);
 
-    if (d < 10) {
+    if (d < 0) {
+      d = 0;
+      h = 0;
+      m = 0;
+      s = 0;
+    }
+
+    if (d >= 0 && d < 10) {
       d = '0' + d;
     }
-    if (h < 10) {
+    if (h >= 0 && h < 10) {
       h = '0' + h;
     }
-    if (m < 10) {
+    if (m >= 0 && m < 10) {
       m = '0' + m;
     }
-    if (s < 10) {
+    if (s >= 0 && s < 10) {
       s = '0' + s;
     }
+
+
     this.day = d;
     this.hour = h;
     this.minute = m;
